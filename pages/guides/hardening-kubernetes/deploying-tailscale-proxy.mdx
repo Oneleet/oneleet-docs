@@ -1,0 +1,55 @@
+# Deploying Tailscale Proxy
+
+This guide will explain how to set up a Tailscale proxy on Kubernetes. This setup will allow users within the Tailscale network (`tailnet`) to access services running on a Kubernetes cluster. This is useful for internal applications or testing environments that shouldn't be publicly exposed.
+
+## Get Started with Tailscale
+
+First off, if you don't already have a Tailscale VPN running, follow the setup instructions [here](https://tailscale.com/kb/1017/install/).
+
+## Deploy a Private Ingress Class
+
+Next, we'll set up a private ingress class. In this guide, we'll deploy the NGINX ingress controller, but instead of creating a `Service` of type `LoadBalancer` (as in most default setups), we'll create a `Service` of type `ClusterIP`, and point Tailscale to this service. For example, this can be done via Helm:
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+
+helm upgrade --install nginx-ingress ingress-nginx/ingress-nginx \
+	--namespace nginx-ingress --create-namespace \
+	--set controller.service.type=ClusterIP \
+    --set controller.ingressClass=nginx-private \
+    --set controller.ingressClassResource.name=nginx-private
+```
+
+After the chart has been deployed, run the following to get the IP address of the `nginx-ingress-controller` service:
+
+```bash
+kubectl get service nginx-ingress-ingress-nginx-controller -n nginx-ingress -o jsonpath='{.spec.clusterIP}'
+```
+
+Take note of this IP address, as we'll need it later.
+
+## Deploy Tailscale Proxy
+
+Next, we'll set up a Tailscale proxy which runs as an agent on the Kubernetes cluster and forwards internal traffic to an NGINX ingress. To do this, we need to [generate a Tailscale auth key](https://tailscale.com/kb/1085/auth-keys/#generating-a-key) (this is different from an API key). This key should be **Reusable** and **Ephemeral**.
+
+To deploy the Tailscale proxy Helm chart, run:
+
+```bash
+helm repo add oneleet-charts https://oneleet.github.io/oneleet-charts
+helm repo update
+
+helm upgrade --install tailscale-proxy oneleet-charts/tailscale-proxy \
+	--namespace tailscale --create-namespace \
+	--set secret.authKey=${YOUR_AUTH_KEY} \
+    --set destIP=${YOUR_NGINX_INGRESS_SERVICE_IP} \
+    --set hostname=tailscale-proxy
+```
+
+## Smoke Test
+
+To test that the proxy is working, try running `curl http://tailscale-proxy` from a device connected to the Tailscale network. You should see a `404 Not Found` response from NGINX, which means that Tailscale is successfully proxying to NGINX!
+
+## Deploying Internal Services
+
+You can deploy internal services by targeting the `nginx-private` ingress class through the `spec.ingressClassName` field on an `Ingress` resource. After these services are deployed, you can then create CNAME records within your DNS server with the target set to `tailscale-proxy`, which [will resolve to the IP address of the Tailscale proxy](https://tailscale.com/kb/1054/dns/).

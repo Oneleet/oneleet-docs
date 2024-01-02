@@ -1,0 +1,92 @@
+# Amazon Web Services (AWS)
+
+## Setup
+
+To setup the AWS integration, navigate to the **Integrations > Add integration > Amazon Web Services** and click **Continue**.
+
+You will be asked to create a new policy and role in your AWS account. Oneleet uses the [AWS AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to work with AWS resources — if you’d like to remove Oneleet’s access to your workspace, simply delete the created role from your AWS account.
+
+### Which permissions does Oneleet require?
+
+Oneleet currently requests the following read-only permissions within AWS:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OneleetAssumeRolePolicy",
+      "Effect": "Allow",
+      "Action": [
+        "account:ListRegions",
+        "cloudtrail:LookupEvents",
+        "cloudwatch:DescribeAlarmsForMetric",
+        "dynamodb:DescribeContinuousBackups",
+        "dynamodb:DescribeTable",
+        "dynamodb:ListTables",
+        "dynamodb:ListTagsOfResource",
+        "ec2:DescribeSecurityGroups",
+        "ecr:DescribeImageScanFindings",
+        "ecr:DescribeRegistry",
+        "ecr:DescribeRepositories",
+        "ecr:ListImages",
+        "ecr:ListTagsForResource",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTags",
+        "iam:GetAccountPasswordPolicy",
+        "iam:GetLoginProfile",
+        "iam:ListMFADevices",
+        "iam:ListUsers",
+        "inspector:DescribeFindings",
+        "inspector:ListFindings",
+        "inspector2:GetFindingsReportStatus",
+        "inspector2:ListCoverage",
+        "inspector2:ListCoverageStatistics",
+        "inspector2:ListFindingAggregations",
+        "inspector2:ListFindings",
+        "lambda:ListFunctions",
+        "lambda:ListTags",
+        "logs:DescribeLogGroups",
+        "rds:DescribeDBInstances",
+        "s3:GetBucketAcl",
+        "s3:GetBucketLocation",
+        "s3:GetBucketTagging",
+        "s3:GetBucketVersioning",
+        "s3:ListAllMyBuckets",
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueues",
+        "sqs:ListQueueTags"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+### Which resources does Oneleet monitor?
+
+Oneleet currently monitors the following AWS resources:
+
+- Accounts
+- RDS instances
+- Application and Classic load balancers
+- IAM users (both user and service accounts)
+- IAM settings
+- EC2 security groups
+- DynamoDB Tables
+- SQS Queues
+- Lambda functions
+- Cloudwatch log groups
+- ECR repositories
+- S3 buckets
+
+## Ignoring AWS resources
+
+You can prevent AWS resources from being read into Oneleet by adding the tag `oneleet-ignore=true` for resources which support tagging.
+
+## Common Issues
+
+### I'm seeing duplicated resources across my AWS accounts
+
+This can occur if you’ve copied the same external ID to multiple AWS accounts. Please make sure you’ve connected a unique external ID to each account.

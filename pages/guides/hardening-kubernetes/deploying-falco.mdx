@@ -1,0 +1,27 @@
+import { Steps } from "nextra/components";
+
+# Deploying Falco
+
+<Steps>
+### Create a Slack webhook for receiving Falco alerts
+ You will need to create a Slack application and add a webhook to it. See the instructions for creating a Slack webhook here: https://api.slack.com/messaging/webhooks.
+
+### Deploy the Falco helm chart.
+
+This should be done through your existing infrastructure-as-code pipeline, but here's a reference for how to set default variables:
+
+```bash
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm repo update
+
+helm upgrade --install falco falcosecurity/falco \
+	--namespace falco --create-namespace \
+	--set falcosidekick.enabled=true \
+	--set driver.kind="ebpf" \
+	--set auditLog.enabled=true \
+    --set falco.jsonOutput=true \
+	--set falco.fileOutput.enabled=true \
+	--set falcosidekick.config.slack.webhookurl="<Slack Channel Webhook URL>"
+```
+
+</Steps>

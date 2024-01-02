@@ -1,0 +1,54 @@
+import { Callout, Steps } from "nextra/components";
+
+# JumpCloud MDM Setup
+
+First off, make sure you've created a Jumpcloud account via the [Jumpcloud console](https://console.jumpcloud.com/).
+
+## Enrolling Apple Devices
+
+There are multiple ways to enroll Apple devices in Jumpcloud. We recommend using Device Enrollment to enroll devices, which allows for both new and existing devices to be enrolled in Jumpcloud.
+
+1. In order to enroll devices, you'll need an Apple Business Manager Account. If you don't have one, you will need a DUNS number to create one. You can determine if your company already has a DUNS number by navigating to [DUNS number lookup](https://developer.apple.com/enroll/duns-lookup/#!/search). After searching, you'll be given the option to submit your information to D&B to get a free number. To create an Apple business manager account, create a separate Apple ID for your company [here](https://appleid.apple.com/account), and then navigate to [https://business.apple.com/](https://business.apple.com/).
+
+2. Once you have an Apple Business Manager account, you can follow the instructions [here](https://jumpcloud.com/support/set-up-apple-mdm) to set up Apple MDM, and set up device enrollment by following the instructions [here](https://jumpcloud.com/support/add-company-owned-apple-devices-to-mdm-with-device-enrollment).
+
+<Callout type="info">
+  If you're linking existing devices, we highly recommend creating a *new user
+  account* on the device, so that you can continue to use a personal account
+  with a different profile on the device. However, it’s possible to use an
+  existing account. See here for more information:
+  [https://jumpcloud.com/support/take-over-an-existing-user-account-with-jumpcloud](https://jumpcloud.com/support/take-over-an-existing-user-account-with-jumpcloud).
+</Callout>
+
+## Setting up Jumpcloud Policies for macOS
+
+Navigate to the **Policy Management** tab and click on the plus button. For each of the below policies, search in the **Mac** tab for the policy name.
+
+<Steps>
+### Add **Mac - Disable Removable Storage Access Policy.** 
+We recommend the following settings, though exceptions can be noted if you require USB or other devices:
+![](/jumpcloud/Jumpcloud.png)
+
+### Add **Mac - FileVault 2 Policy.**
+
+We recommend the following settings:
+![](/jumpcloud/Jumpcloud-1.png)
+
+### Add **Mac - Gatekeeper Control Policy.**
+
+We recommend the following settings, though you can disable override if you are confident that all services and tools used by developers won’t require an override:
+![](/jumpcloud/Jumpcloud-2.png)
+
+### Add **Mac - Local Firewall Controls Policy.**
+
+We recommend the following settings:
+![](/jumpcloud/Jumpcloud-3.png)
+
+### Add **Mac - Lock Screen Policy.**
+
+Set the timeout to 120 seconds or less:
+![](/jumpcloud/Jumpcloud-4.png)
+
+</Steps>
+
+Make sure these policies have been rolled out to all devices. For each policy, navigate to the “Devices” tab, and make sure you bind each policy to the device. If you restart the device, the policies will take effect.
