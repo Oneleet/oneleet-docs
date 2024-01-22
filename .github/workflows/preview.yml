@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.8.0
+        uses: zaproxy/action-baseline@v0.10.0
         with:
           target: ${{ steps.deploy.outputs.deployment-url }}
   delete:
