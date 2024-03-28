@@ -5,14 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 2999"
+    "start": "next start -p 2999",
+    "postbuild": "rm -rf .next/cache"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oneleet/oneleet-docs.git"
   },
   "author": "Oneleet Inc.",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/oneleet/oneleet-docs/issues"
   },
