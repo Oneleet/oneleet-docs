@@ -20,4 +20,4 @@ npm run build
 npm run start
 ```
 
-You can then open the docs app at [http://localhost:2999](http://localhost:2999)
+You can then open the docs app at [http://127.0.0.1:2999](http://127.0.0.1:2999)
