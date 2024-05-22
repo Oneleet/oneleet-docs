@@ -18,3 +18,19 @@ Oneleet currently monitors the following on Google Workspace:
 
 - User accounts
 - GMail settings
+
+### Troubleshooting Connection Issues
+
+If you are experiencing difficulties connecting Oneleet to Google Workspace due to sign-in restrictions imposed by your security policies, you will need to manually configure an exemption for Oneleet. This involves using a special identifier known as an OAuth Client ID to bypass certain API security policies and set the Oneleet Google application as a trusted app. Follow these steps to resolve the connection issues:
+
+1. Open your Google Admin console at [https://admin.google.com/](https://admin.google.com/).
+2. In the sidebar, navigate to **Security** > **Access and data control** > **API controls**.
+3. Click on **Manage third-party app access**.
+4. Select **Add app**, then choose **OAuth App Name or Client ID**.
+5. Enter the client ID `487371732991-7o3p4g81rmvdj7vj8sh9kh4rqfk5hhgc.apps.googleusercontent.com` and search.
+6. Select the Oneleet application from the search results (there should only be one listed).
+7. Choose the users or groups you would like to allow to log in to Oneleet's integration.
+8. Set the application status to **Trusted** and select **Allowlist for exemption from API access blocks**.
+9. Click **Finish** to complete the setup.
+
+By following these steps, you should be able to successfully connect Oneleet to your Google Workspace.
