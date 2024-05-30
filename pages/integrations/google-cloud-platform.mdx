@@ -1,0 +1,28 @@
+# Google Cloud Platform
+
+## Setup
+To setup the GCP integration, navigate to the **Integrations > Add integration > Google Cloud Platform** and click **Continue**.
+
+Oneleet uses a service account to list Google Cloud Platform resources.
+
+To add a new project, copy the following account email:
+
+```bash
+${"{{serviceAccountEmail}}"}
+```
+
+Navigate to the IAM service, and click 'Grant Access' in the 'View By Principals' tab. 
+
+Paste the email copied from above under the 'Add Principals' section.
+
+Grant this new account the following roles:
+
+- Activity Analysis Viewer
+- Artifact Registry Reader
+- Cloud Asset Viewer
+- Cloud SQL Viewer
+- Compute Viewer
+- Kubernetes Engine Cluster Viewer
+- Security Reviewer
+
+Save this new account by clicking 'Save' at the bottom of the page.
