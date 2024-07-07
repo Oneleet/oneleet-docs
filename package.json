@@ -3,7 +3,7 @@
   "version": "1.0",
   "description": "Oneleet Docs",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 2999",
     "build": "next build",
     "start": "next start -p 2999",
     "postbuild": "rm -rf .next/cache"
