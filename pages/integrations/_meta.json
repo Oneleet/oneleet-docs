@@ -1,5 +1,6 @@
 {
   "aws": "AWS",
   "github": "GitHub",
-  "google-workspace": "Google Workspace"
+  "google-workspace": "Google Workspace",
+  "google-cloud-platform": "Google Cloud Platform"
 }
