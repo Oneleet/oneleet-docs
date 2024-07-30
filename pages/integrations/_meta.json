@@ -2,5 +2,5 @@
   "aws": "AWS",
   "github": "GitHub",
   "google-workspace": "Google Workspace",
-  "gcp": "GCP"
+  "google-cloud-platform": "Google Cloud Platform"
 }
