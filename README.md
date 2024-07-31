@@ -5,7 +5,7 @@
 ### Install dependencies
 
 ```
-npm install
+npm i
 ```
 
 ### Build the docs
