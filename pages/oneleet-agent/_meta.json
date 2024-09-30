@@ -1,6 +1,6 @@
 {
-  "setup": "Setup",
-  "macos": "macOS Devices",
-  "windows": "Windows Devices",
-  "linux": "Linux Devices"
+  "admin-prerequisites": "Admin Prerequisites",
+  "macos": "macOS",
+  "windows": "Windows",
+  "linux": "Linux"
 }
