@@ -1,6 +1,7 @@
-{
+export default {
   "index": "Introduction",
   "integrations": "Integrations",
+  "oneleet-agent": "Oneleet Agent",
   "guides": "Guides",
   "support": {
     "title": "Support",

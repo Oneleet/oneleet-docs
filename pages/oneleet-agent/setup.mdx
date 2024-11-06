@@ -1,0 +1,75 @@
+import { Callout } from "nextra/components";
+
+# Setup
+
+<Callout type="warning">
+  The Oneleet Agent is currently in invite-only beta. If you'd like to start using it, please contact us at [support@oneleet.com](mailto:support@oneleet.com).
+</Callout>
+
+## Add employees to your tenant (Admins only)
+
+1. Go to the [Oneleet Dashboard](https://app.oneleet.com).
+2. Click on the `Management` tab and go to `People`.
+3. Make sure everyone you want to add is either a tenant member or an employee.
+<Callout type="info">
+  An employee has access to the [Oneleet Portal](https://portal.oneleet.com), while a tenant member has access to both the [Dashboard](https://app.oneleet.com) as well as the Portal.
+</Callout>
+
+## Download the Oneleet Agent
+
+1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
+2. Click on the `Devices` tab to download the Oneleet Agent for your OS.
+
+## macOS (11.0+)
+
+You should have downloaded a zip file named `Oneleet.zip`. Follow these steps to install the Oneleet Agent on your macOS device:
+
+1. Double click the zip file to unzip it. This will extract an app bundle named `Oneleet`.
+2. Move the `Oneleet` app to your `Applications` folder.
+3. Launch the `Oneleet` app. You should see the Oneleet icon appear in your menu bar at the top of your screen. Click on the icon then click `Log in...`.
+4. You'll be prompted with a device code authorization page. You will see a popup with the device code. Once you verify the device code, click `Continue` on the login page.
+5. Log in using your email to authenticate. You should receive a one-time code by email to finish logging in.
+
+## Windows (10+)
+
+You should have downloaded an installer named `OneleetInstaller.exe`. Follow these steps to install the Oneleet Agent on your Windows device:
+
+1. Double click the installer to run it. You may see a warning from Windows Defender SmartScreen. Click `More info` then `Run anyway` to proceed.
+2. Follow the installation wizard to install the Oneleet Agent on your device.
+3. The installer should launch the Oneleet Agent automatically after installation. If it doesn't, you can find the `Oneleet` app in your Start menu which you can use to launch the Oneleet Agent.
+4. You should see the Oneleet icon appear in your system tray at the bottom right of your screen. Click on the icon then click `Log in...`.
+5. You will be prompted with a device code authorization page. You will see a notification with the device code. Once you verify the device code, click `Continue` on the login page.
+
+## Linux (DEB and RPM)
+
+import { Tabs } from 'nextra/components'
+
+<Tabs items={['Ubuntu, Debian, Mint', 'Fedora, Rocky/RHEL', 'OpenSUSE']} defaultIndex="0">
+  <Tabs.Tab>
+  ```sh copy showLineNumbers
+  sudo apt install curl
+  sudo curl -fsSLo /usr/share/keyrings/oneleet-agent-archive-keyring.gpg https://downloads.oneleet.com/oneleet-agent-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/oneleet-agent-archive-keyring.gpg] https://downloads.oneleet.com/agent/linux/debian stable main" | sudo tee /etc/apt/sources.list.d/oneleet-agent-release.list
+  sudo apt update
+  sudo apt install oneleet-agent
+  ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```sh copy showLineNumbers
+  sudo dnf install dnf-plugins-core
+  sudo dnf config-manager --add-repo https://downloads.oneleet.com/oneleet-agent.repo
+  sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
+  sudo dnf install oneleet-agent
+  ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```sh copy showLineNumbers
+  sudo zypper install curl
+  sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
+  sudo zypper addrepo https://downloads.oneleet.com/oneleet-agent.repo
+  sudo zypper install oneleet-agent
+  ```
+  </Tabs.Tab>
+</Tabs>
+
+Once you've logged in, you're all set! Your device will be automatically registered with your organization on Oneleet.
