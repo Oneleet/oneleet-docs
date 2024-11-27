@@ -1,4 +1,4 @@
-{
+export default {
   "index": "Introduction",
   "integrations": "Integrations",
   "oneleet-agent": "Oneleet Agent",
