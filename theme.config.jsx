@@ -1,4 +1,3 @@
-import React from "react";
 import { useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 
