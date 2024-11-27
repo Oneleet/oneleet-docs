@@ -1,5 +1,6 @@
 export default {
   "index": "Introduction",
+  "penetration-testing": "Penetration Testing",
   "integrations": "Integrations",
   "oneleet-agent": "Oneleet Agent",
   "guides": "Guides",
