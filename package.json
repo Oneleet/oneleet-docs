@@ -19,8 +19,8 @@
   "homepage": "https://docs.oneleet.com",
   "dependencies": {
     "next": "^15.0.2",
-    "nextra": "^3.2.1",
-    "nextra-theme-docs": "^3.2.1"
+    "nextra": "^3.2.4",
+    "nextra-theme-docs": "^3.2.4"
   },
   "devDependencies": {
     "@types/node": "22.10.0"
