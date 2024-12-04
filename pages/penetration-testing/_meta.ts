@@ -1,9 +1,10 @@
 export default {
-  ptaas: "Penetration Testing as a Service (PtaaS) at Oneleet",
-  types: "Penetration Testing Types",
-  "reports-documents": "Penetration Test Reports / Documents",
-  "process-overview": "High-level overview of the Process",
-  "test-report": "The Penetration Test Report",
-  "analyze-remediate-retesting-accept": "Analyze, Remediate, Retesting and Accept the Risk",
-  "faq": "Frequently Asked Questions",
+  ptaas: "Penetration Testing as a Service (PtaaS)",
+  "process-overview": "Process Overview",
+  "classification": "Classification",
+  "documents": "Documents",
+  "final-report": "Final Report",
+  "offerings": "Offerings",
+  "findings-decisions": "Decisions on Findings",
+  "faq": "Frequently Asked Questions"
 };
