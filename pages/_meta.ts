@@ -3,6 +3,7 @@ export default {
   "integrations": "Integrations",
   "oneleet-agent": "Oneleet Agent",
   "guides": "Guides",
+  "penetration-testing": "Penetration Testing",
   "support": {
     "title": "Support",
     "type": "page",

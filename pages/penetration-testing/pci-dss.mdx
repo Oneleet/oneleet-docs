@@ -1,0 +1,50 @@
+# PCI DSS Penetration Test
+
+If you hired Oneleet for a PCI DSS penetration test, there will be a few minor differences compared to our regular penetration testing process. The primary objectives of the PCI DSS penetration test are to:
+
+- Validate that the cardholder data environment (CDE) is isolated, secure, and compliant with PCI DSS standards.
+- Ensure that cardholder data (CHD) is protected from unauthorized access.
+- Identify and remediate vulnerabilities that could compromise cardholder data.
+
+As a result, the following processes will be slightly different:
+
+- The scope of the penetration test.
+- The documentation before the PCI DSS Application penetration test.
+- The frequency of penetration testing.
+
+## Scoping of a PCI DSS Application Penetration Test:
+
+During the scoping call, in addition to the already mentioned points, the following aspects will also be considered for a PCI DDS application penetration test:
+
+- **Application Security Testing**
+  - Test all applications within the CDE that handle CHD to identify security vulnerabilities, including those that adhere to OWASP standards. This involves evaluating for common threats such as SQL injection, Cross-Site Scripting (XSS), authentication vulnerabilities, and authorization flaws.
+- **External Application Testing**
+  - Simulate attacks on externally accessible applications that provide access to or protect CHD. External testing verifies the security of internet-facing applications by identifying misconfigurations, exposed ports, and external access vulnerabilities.
+- **Internal Application Testing**
+  - Perform assessments on applications accessible from within the internal network. This involves testing for unauthorized access, privilege escalation, and potential risks of lateral movement if a user gains unauthorized access to the CDE.
+- **Segmentation Testing**
+  - Confirm that network segmentation effectively isolates CHD-related applications from the rest of the environment, minimizing the PCI scope.
+
+## Documentation provided before the PCI DSS Application Penetration Test:
+
+Consider providing the following documentation after or before the scoping call:
+
+- A network diagram illustrating all network segments within the scope of the test;
+- A cardholder data flow diagram;
+- A list of all anticipated services and ports exposed at the CDE perimeter;
+- Details on how authorized users access the CDE;
+- A list of all network segments that have been isolated from the CDE to minimize the scope.
+
+## Frequency of PCI DSS penetration tests
+
+According to **PCI DSS Requirements 11.3.1 and 11.3.2**, penetration testing is mandatory at least annually and after any substantial alterations to the network environment. These alterations may encompass infrastructure upgrades, application modifications, or the installation of novel system components.
+
+The definition of a **“significant change”** fluctuates based on an **organization’s risk assessment** process and the specific configuration of its environment. Since PCI DSS doesn’t provide a rigid definition of a significant change, it’s up to each entity to assess whether a change could potentially compromise network security or expose cardholder data. If a modification could potentially affect security or access to cardholder data, it’s generally regarded as significant and should prompt a penetration test.
+
+### Example of a Significant Change
+
+**Migration to a New Firewall System**: Upgrading or replacing the firewall safeguarding the CDE is a substantial change because it directly affects network security. This transition could introduce novel configurations, alter network paths, and influence data flow, potentially compromising cardholder data. Given the critical role firewalls play in security, a penetration test is essential to validate that security controls are functioning as intended.
+
+### Example of a Non Significant Change
+
+**Patch for a Non-CDE System**: Applying a minor software patch to a system outside the CDE that doesn’t interact with or impact cardholder data would be considered a non-significant change. This maintenance doesn’t alter security controls in the CDE or affect access to sensitive data, so a penetration test under PCI DSS is not necessary.
