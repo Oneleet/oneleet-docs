@@ -1,0 +1,21 @@
+import { Callout } from "nextra/components";
+
+<Callout type="warning">
+  The Oneleet Agent is currently invite-only. If you'd like to start using it, please contact us via your dedicated Slack Connect channel with us.
+</Callout>
+
+# General & Privacy
+
+The Oneleet Agent leverages [osquery](https://osquery.io/)'s powerful SQL-like interface to gather system information, allowing security-aware teams to query real-time data such as hardware specifications, firewall information, and session locking settings. This granular visibility helps organizations quickly identify potential security threats and compliance violations, while the Agent's lightweight design ensures minimal impact on system performance.
+
+The platform's automated data collection and analysis capabilities streamline security operations by continuously monitoring critical system metrics and generating alerts based on customizable rules. Security administrators can set up specific monitoring parameters for different device groups, enabling them to maintain distinct security policies for various departments or user roles. The Agent also maintains detailed audit logs, providing a comprehensive timeline of system changes and security events that proves invaluable during incident investigations and compliance audits.
+
+Additionally, the platform's robust reporting features help organizations demonstrate compliance with various regulatory frameworks, including HIPAA, GDPR, and SOC 2, by automatically generating detailed compliance reports and maintaining evidence of security controls.
+
+## Privacy
+
+The Oneleet Agent is designed with privacy as a core principle, strictly limiting its data collection to essential device state information as outlined in our documentation. The agent operates on a "need-to-know" basis, only transmitting basic system health metrics and compliance-related data points. All other device information remains private and is never collected or transmitted.
+
+To ensure maximum data security, the Oneleet Agent implements robust encryption protocols at every stage of data handling. All collected data is encrypted in transit using TLS 1.3 with strong cipher suites, preventing unauthorized interception during transmission. At rest, the data is secured using AES-256 encryption with regularly rotated keys and envelope encryption. This end-to-end encryption approach ensures that sensitive device information remains protected throughout its lifecycle, from initial collection to long-term storage.
+
+The platform's commitment to privacy extends to access controls, where even tenant administrator(s) are restricted to viewing only boolean states (true/false) of device compliance and security posture. This zero-knowledge approach means administrators can effectively monitor and maintain security standards without accessing raw device data. For example, rather than seeing specific software versions or configuration details, administrators only see whether a device meets the required security policies, maintaining both security oversight and end-user privacy.

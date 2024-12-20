@@ -1,0 +1,37 @@
+import { Callout } from "nextra/components";
+
+<Callout type="warning">
+  The Oneleet Agent is currently invite-only. If you'd like to start using it, please contact us via your dedicated Slack Connect channel with us.
+</Callout>
+
+# Frequently Asked Questions
+
+### What is the Oneleet Agent?
+
+The Oneleet Agent is a lightweight application powered by [**osquery**](https://osquery.io/) that monitors system settings on your devices, such as firewall status, disk encryption, and screen lock. It ensures compliance with security policies and provides insights into device security for your organization.
+
+### What data does the Oneleet Agent collect?
+
+Visit the [**Data Collection**](/oneleet-agent/data-collection) page to see what data the Oneleet Agent collects.
+
+### Where can I download the Oneleet Agent?
+
+Visit the [**Setup**](/oneleet-agent/setup) page for instructions on how to download the Oneleet Agent on your device.
+
+### Why do I need to install the Oneleet Agent?
+
+Installing the Oneleet Agent ensures your device meets the required security and compliance standards. It enables your organization to monitor essential security settings, detect potential vulnerabilities, and respond quickly to risks. Without it, your device may not meet compliance requirements, potentially exposing sensitive data to threats.
+
+### I just updated my setting and the Oneleet Agent check is still failing, what should I do?
+
+It will take approximately up to an hour for the Agent to check the new state and to verify if it is passing or not. If after an hour this doesn't change you may follow the steps in the [**Troubleshooting**](/oneleet-agent/troubleshooting) guide(s) to resolve any underlying issues.
+
+### Who has access to the data collected by the Oneleet Agent?
+
+Only the admin(s) of your organization can view the results of checks that run on your device. Below is a screenshot of what it looks like for the admin(s).
+
+![Admin view of Devices](/oneleet-agent/device-admin-view.png)
+
+### How does Oneleet respect my privacy?
+
+Your privacy is our top priority. The Oneleet Agent only collects system state information for security and compliance, such as encryption status and firewall settings. It does not access personal files, browsing history, or other private data. Visit [**General & Privacy**](/oneleet-agent/general-privacy) for more information.

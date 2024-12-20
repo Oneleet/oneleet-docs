@@ -1,0 +1,90 @@
+import { Tabs } from "nextra/components";
+import { Callout } from "nextra/components";
+
+<Callout type="warning">
+  The Oneleet Agent is currently invite-only. If you'd like to start using it, please contact us via your dedicated Slack Connect channel with us.
+</Callout>
+
+# Data Collection
+
+The Oneleet Agent collects data from your device for continuous monitoring and security. The data collected includes:
+
+<Tabs items={['macOS', 'Windows', 'Linux']}>
+  <Tabs.Tab>
+### System information
+
+- Computer name
+- CPU brand
+- Hardware model
+- Hardware serial
+
+### OS information
+
+- OS name
+- OS version
+- OS architecture
+
+### Firewall status
+
+Firewall is a network security system that monitors and controls incoming and outgoing network traffic. We check the status of the firewall to ensure that it is enabled.
+
+### Gatekeeper status
+
+Gatekeeper is a security feature in macOS that helps protect your Mac from malicious software. We check the status of Gatekeeper to ensure that it is enabled.
+
+### FileVault status
+
+FileVault is a disk encryption program in macOS that helps protect your data. We check the status of FileVault for your main disk drive to ensure that it is enabled.
+
+### Screenlock status
+
+Screenlock is a security feature that requires a password to unlock your device. We check the status of screenlock to ensure that it is enabled and set to a minimum threshold.
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ### System information
+
+- Computer name
+- CPU brand
+- Hardware model
+- Hardware serial
+
+### OS information
+
+- OS name
+- OS version
+- OS architecture
+
+### Firewall status
+
+Firewall is a network security system that monitors and controls incoming and outgoing network traffic. We check the status of the firewall to ensure that it is enabled.
+
+### BitLocker status
+
+BitLocker is a disk encryption program in Windows that helps protect your data. We check the status of BitLocker for your main disk drive to ensure that it is enabled.
+
+### Screenlock status
+
+Screenlock is a security feature that requires a password to unlock your device. We check the status of screenlock to ensure that it is enabled and set to a minimum threshold.
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ### System information
+
+- Computer name
+- CPU brand
+- Hardware model
+- Hardware serial
+
+### OS information
+
+- OS name
+- OS version
+- OS architecture
+
+### Disk encryption status
+
+Disk encryption is a security feature that helps protect your data. We check the status of disk encryption for your main disk drive to ensure that it is enabled.
+
+  </Tabs.Tab>
+</Tabs>

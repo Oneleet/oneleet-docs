@@ -1,6 +1,7 @@
 export default {
+  "general-privacy": "General & Privacy",
   setup: "Setup",
-  macos: "macOS Devices",
-  windows: "Windows Devices",
-  linux: "Linux Devices",
+  "data-collection": "Data Collection",
+  troubleshooting: "Troubleshooting",
+  faq: "Frequently Asked Questions",
 };

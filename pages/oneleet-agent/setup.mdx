@@ -1,75 +1,159 @@
 import { Callout } from "nextra/components";
+import { Tabs } from "nextra/components";
+
+<Callout type="warning">
+  The Oneleet Agent is currently invite-only. If you'd like to start using it, please contact us via your dedicated Slack Connect channel with us.
+</Callout>
 
 # Setup
 
-<Callout type="warning">
-  The Oneleet Agent is currently in invite-only beta. If you'd like to start using it, please contact us at [support@oneleet.com](mailto:support@oneleet.com).
-</Callout>
-
-## Add employees to your tenant (Admins only)
+<details>
+<summary>Add employees to your tenant (Admins only)</summary>
 
 1. Go to the [Oneleet Dashboard](https://app.oneleet.com).
-2. Click on the `Management` tab and go to `People`.
+2. Click on the `People` tab.
 3. Make sure everyone you want to add is either a tenant member or an employee.
 <Callout type="info">
   An employee has access to the [Oneleet Portal](https://portal.oneleet.com), while a tenant member has access to both the [Dashboard](https://app.oneleet.com) as well as the Portal.
 </Callout>
+</details>
 
-## Download the Oneleet Agent
+Use the OS-specific instructions below to install the Oneleet Agent on your devices.
+
+<Tabs items={['macOS (Beta)', 'Windows (Beta)', 'Linux (Alpha)']}>
+  <Tabs.Tab>
+  # macOS (Beta)
+
+## System requirements
+
+Minimum system requirements for the Oneleet Agent on macOS:
+
+- macOS 13 (Ventura)
+- 8 GB RAM
+
+## Download
 
 1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
-2. Click on the `Devices` tab to download the Oneleet Agent for your OS.
+2. Click on the **Devices** tab to download the Oneleet Agent for macOS.
 
-## macOS (11.0+)
+## Install
 
-You should have downloaded a zip file named `Oneleet.zip`. Follow these steps to install the Oneleet Agent on your macOS device:
+The above step should have downloaded a DMG to install the Oneleet Agent on your Mac.
 
-1. Double click the zip file to unzip it. This will extract an app bundle named `Oneleet`.
-2. Move the `Oneleet` app to your `Applications` folder.
-3. Launch the `Oneleet` app. You should see the Oneleet icon appear in your menu bar at the top of your screen. Click on the icon then click `Log in...`.
-4. You'll be prompted with a device code authorization page. You will see a popup with the device code. Once you verify the device code, click `Continue` on the login page.
-5. Log in using your email to authenticate. You should receive a one-time code by email to finish logging in.
+1. Double-click on the DMG to mount it
+2. Drag and drop the Oneleet app bundle into the **Applications** folder
+3. You can now search for Oneleet in **Launchpad** to launch the Agent
 
-## Windows (10+)
+## Uninstall
 
-You should have downloaded an installer named `OneleetInstaller.exe`. Follow these steps to install the Oneleet Agent on your Windows device:
+<Callout type="warning">
+  This will remove the Oneleet Agent from your device and stop all monitoring of
+  your system state which can affect your compliance and security.
+</Callout>
 
-1. Double click the installer to run it. You may see a warning from Windows Defender SmartScreen. Click `More info` then `Run anyway` to proceed.
-2. Follow the installation wizard to install the Oneleet Agent on your device.
-3. The installer should launch the Oneleet Agent automatically after installation. If it doesn't, you can find the `Oneleet` app in your Start menu which you can use to launch the Oneleet Agent.
-4. You should see the Oneleet icon appear in your system tray at the bottom right of your screen. Click on the icon then click `Log in...`.
-5. You will be prompted with a device code authorization page. You will see a notification with the device code. Once you verify the device code, click `Continue` on the login page.
-
-## Linux (DEB and RPM)
-
-import { Tabs } from 'nextra/components'
-
-<Tabs items={['Ubuntu, Debian, Mint', 'Fedora, Rocky/RHEL', 'OpenSUSE']} defaultIndex="0">
-  <Tabs.Tab>
-  ```sh copy showLineNumbers
-  sudo apt install curl
-  sudo curl -fsSLo /usr/share/keyrings/oneleet-agent-archive-keyring.gpg https://downloads.oneleet.com/oneleet-agent-archive-keyring.gpg
-  echo "deb [signed-by=/usr/share/keyrings/oneleet-agent-archive-keyring.gpg] https://downloads.oneleet.com/agent/linux/debian stable main" | sudo tee /etc/apt/sources.list.d/oneleet-agent-release.list
-  sudo apt update
-  sudo apt install oneleet-agent
-  ```
+1. Open **Finder** and go to the **Applications** folder.
+2. Locate the Oneleet app bundle.
+3. Drag the app to the **Bin** or right-click and select **Move to Bin**.
+4. Empty the Trash by right-clicking on the **Bin** icon and selecting **Empty Bin**.
   </Tabs.Tab>
   <Tabs.Tab>
-  ```sh copy showLineNumbers
-  sudo dnf install dnf-plugins-core
-  sudo dnf config-manager --add-repo https://downloads.oneleet.com/oneleet-agent.repo
-  sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
-  sudo dnf install oneleet-agent
-  ```
+# Windows (Beta)
+
+## System requirements
+
+Minimum system requirements for the Oneleet Agent on Windows:
+
+- Windows 10 x64
+- 8 GB RAM
+
+## Download
+
+1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
+2. Click on the `Devices` tab to download the Oneleet Agent for Windows.
+
+## Install
+
+The above step should have downloaded a setup EXE to install the Oneleet Agent on your PC.
+
+1. Double-click on the setup EXE to run it.
+2. Follow the on-screen instructions to install the Oneleet Agent.
+
+## Uninstall
+
+<Callout type="warning">
+  This will remove the Oneleet Agent from your device and stop all monitoring of
+  your system state which can affect your compliance and security.
+</Callout>
+
+1. Open the **Control Panel** and navigate to the **Add or remove programs** section
+2. Scroll to find **Oneleet**.
+3. Click **More** (three dots) next to it, then select **Uninstall**.
+
   </Tabs.Tab>
   <Tabs.Tab>
-  ```sh copy showLineNumbers
-  sudo zypper install curl
-  sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
-  sudo zypper addrepo https://downloads.oneleet.com/oneleet-agent.repo
-  sudo zypper install oneleet-agent
-  ```
+    # Linux (Alpha)
+
+## System requirements
+
+Minimum system requirements for the Oneleet Agent on Linux:
+
+- Debian or RPM-based distro
+- arm64 or amd64
+- 8 GB RAM
+
+## Install
+
+**Ubuntu, Debian, Mint**
+
+```bash
+sudo apt install curl
+sudo curl -fsSLo /usr/share/keyrings/oneleet-agent-archive-keyring.gpg https://downloads.oneleet.com/oneleet-agent-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/oneleet-agent-archive-keyring.gpg] https://downloads.oneleet.com/agent/linux/debian stable main" | sudo tee /etc/apt/sources.list.d/oneleet-agent-release.list
+sudo apt update
+sudo apt install oneleet-agent
+```
+
+**Fedora, Rocky/RHEL**
+
+```bash
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --add-repo https://downloads.oneleet.com/oneleet-agent.repo
+sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
+sudo dnf install oneleet-agent
+```
+
+**OpenSUSE**
+
+```bash
+sudo zypper install curl
+sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
+sudo zypper addrepo https://downloads.oneleet.com/oneleet-agent.repo
+sudo zypper install oneleet-agent
+```
+
+## Uninstall
+
+<Callout type="warning">
+  This will remove the Oneleet Agent from your device and stop all monitoring of
+  your system state which can affect your compliance and security.
+</Callout>
+
+**Ubuntu, Debian, Mint**
+
+```bash
+sudo apt remove oneleet-agent
+```
+
+**Fedora, Rocky/RHEL**
+
+```bash
+sudo dnf remove oneleet-agent
+```
+
+**OpenSUSE**
+
+```bash
+sudo zypper remove oneleet-agent
+```
   </Tabs.Tab>
 </Tabs>
-
-Once you've logged in, you're all set! Your device will be automatically registered with your organization on Oneleet.
