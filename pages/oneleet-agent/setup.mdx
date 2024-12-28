@@ -33,8 +33,17 @@ Minimum system requirements for the Oneleet Agent on macOS:
 
 ## Download
 
+#### Download directly from Oneleet Portal
+
 1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
 2. Click on the **Devices** tab to download the Oneleet Agent for macOS.
+
+#### Install via Homebrew
+
+```bash
+brew tap oneleet/tap
+brew install --cask oneleet-agent
+```
 
 ## Install
 
@@ -51,10 +60,18 @@ The above step should have downloaded a DMG to install the Oneleet Agent on your
   your system state which can affect your compliance and security.
 </Callout>
 
+#### Downloaded directly from Oneleet Portal
+
 1. Open **Finder** and go to the **Applications** folder.
 2. Locate the Oneleet app bundle.
 3. Drag the app to the **Bin** or right-click and select **Move to Bin**.
 4. Empty the Trash by right-clicking on the **Bin** icon and selecting **Empty Bin**.
+
+#### Installed via Homebrew
+
+```bash
+brew uninstall oneleet-agent
+```
   </Tabs.Tab>
   <Tabs.Tab>
 # Windows (Beta)
