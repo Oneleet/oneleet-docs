@@ -33,25 +33,26 @@ Minimum system requirements for the Oneleet Agent on macOS:
 
 ## Download
 
-#### Download directly from Oneleet Portal
+<Tabs items={['Directly from Oneleet Portal', 'Homebrew']}>
+  <Tabs.Tab>
+    1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
+    2. Click on the **Devices** tab to download the Oneleet Agent for macOS.
 
-1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
-2. Click on the **Devices** tab to download the Oneleet Agent for macOS.
+    ### Install
 
-#### Install via Homebrew
+    The above steps should have downloaded a DMG to install the Oneleet Agent on your Mac.
 
-```bash
-brew tap oneleet/tap
-brew install --cask oneleet-agent
-```
-
-## Install
-
-The above step should have downloaded a DMG to install the Oneleet Agent on your Mac.
-
-1. Double-click on the DMG to mount it
-2. Drag and drop the Oneleet app bundle into the **Applications** folder
-3. You can now search for Oneleet in **Launchpad** to launch the Agent
+    1. Double-click on the DMG to mount it
+    2. Drag and drop the Oneleet app bundle into the **Applications** folder
+    3. You can now search for Oneleet in **Launchpad** to launch the Agent
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash
+    brew tap oneleet/tap
+    brew install --cask oneleet-agent
+    ```
+  </Tabs.Tab>
+</Tabs>
 
 ## Uninstall
 
@@ -60,18 +61,19 @@ The above step should have downloaded a DMG to install the Oneleet Agent on your
   your system state which can affect your compliance and security.
 </Callout>
 
-#### Downloaded directly from Oneleet Portal
-
-1. Open **Finder** and go to the **Applications** folder.
-2. Locate the Oneleet app bundle.
-3. Drag the app to the **Bin** or right-click and select **Move to Bin**.
-4. Empty the Trash by right-clicking on the **Bin** icon and selecting **Empty Bin**.
-
-#### Installed via Homebrew
-
-```bash
-brew uninstall oneleet-agent
-```
+<Tabs items={['Directly from Oneleet Portal', 'Homebrew']}>
+  <Tabs.Tab>
+    1. Open **Finder** and go to the **Applications** folder.
+    2. Locate the Oneleet app bundle.
+    3. Drag the app to the **Bin** or right-click and select **Move to Bin**.
+    4. Empty the Trash by right-clicking on the **Bin** icon and selecting **Empty Bin**.
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash
+    brew uninstall oneleet-agent
+    ```
+  </Tabs.Tab>
+</Tabs>
   </Tabs.Tab>
   <Tabs.Tab>
 # Windows (Beta)
