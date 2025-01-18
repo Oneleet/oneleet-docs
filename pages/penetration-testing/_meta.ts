@@ -1,11 +1,11 @@
 export default {
-  ptaas: "Penetration Testing as a Service (PtaaS)",
-  "services": "Pentesting Services",
-  "pentesting-classification": "Types of Pentests",
-  "process-overview": "Process Overview",
+  ptaas: "Penetration testing as a service (PtaaS)",
+  "services": "Pentesting services",
+  "pentesting-classification": "Types of pentests",
+  "process-overview": "Process overview",
   "documents": "Documents",
-  "final-report": "Penetration Test Report",
+  "final-report": "Penetration test report",
   "findings-decisions": "Remediation",
   "pci-dss": "PCI DSS",
-  "faq": "Frequently Asked Questions"
+  "faq": "Frequently asked questions"
 };

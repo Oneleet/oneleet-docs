@@ -1,4 +1,4 @@
 export default {
-    "areas": "Pentesting Engagements",
-    "packages": "Pentesting Packages"
+    "areas": "Pentesting engagements",
+    "packages": "Pentesting packages"
 }

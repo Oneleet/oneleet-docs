@@ -58,19 +58,20 @@ const config = {
     const url =
       "https://docs.oneleet.com" +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
+    const title = frontMatter.title
+      ? `${frontMatter.title} - Oneleet Docs`
+      : "Oneleet Docs";
 
     return (
       <>
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta property="og:url" content={url} />
-        <meta
-          property="og:title"
-          content={frontMatter.title || "Oneleet Docs"}
-        />
+        <meta property="og:title" content={title} />
         <meta
           property="og:description"
           content={frontMatter.description || "Oneleet Docs"}
         />
+        <title>{title}</title>
       </>
     );
   },

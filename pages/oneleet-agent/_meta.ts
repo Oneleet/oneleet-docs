@@ -1,7 +1,7 @@
 export default {
-  "general-privacy": "General & Privacy",
+  "general-privacy": "General & privacy",
   setup: "Setup",
-  "data-collection": "Data Collection",
+  "data-collection": "Data collection",
   troubleshooting: "Troubleshooting",
-  faq: "Frequently Asked Questions",
+  faq: "Frequently asked questions",
 };
