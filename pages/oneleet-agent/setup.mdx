@@ -120,39 +120,19 @@ The above step should have downloaded a setup EXE to install the Oneleet Agent o
 
 Minimum system requirements for the Oneleet Agent on Linux:
 
-- Debian or RPM-based distro
-- arm64 or amd64
+- x86_64 or arm64
 - 8 GB RAM
+
+## Download
+
+1. Open the [Oneleet Portal](https://portal.oneleet.com) in your browser and log in.
+2. Click on the `Devices` tab to download the Oneleet Agent for your Linux distribution.
 
 ## Install
 
-**Ubuntu, Debian, Mint**
+For DEB and RPM, install the package using the package manager. You should have `/usr/bin/oneleet-agent` available after installation apart from the Desktop entry.
 
-```bash
-sudo apt install curl
-sudo curl -fsSLo /usr/share/keyrings/oneleet-agent-archive-keyring.gpg https://downloads.oneleet.com/oneleet-agent-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/oneleet-agent-archive-keyring.gpg] https://downloads.oneleet.com/agent/linux/debian stable main" | sudo tee /etc/apt/sources.list.d/oneleet-agent-release.list
-sudo apt update
-sudo apt install oneleet-agent
-```
-
-**Fedora, Rocky/RHEL**
-
-```bash
-sudo dnf install dnf-plugins-core
-sudo dnf config-manager --add-repo https://downloads.oneleet.com/oneleet-agent.repo
-sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
-sudo dnf install oneleet-agent
-```
-
-**OpenSUSE**
-
-```bash
-sudo zypper install curl
-sudo rpm --import https://downloads.oneleet.com/oneleet-agent.asc
-sudo zypper addrepo https://downloads.oneleet.com/oneleet-agent.repo
-sudo zypper install oneleet-agent
-```
+For AppImage, simply launch the application.
 
 ## Uninstall
 
@@ -164,19 +144,19 @@ sudo zypper install oneleet-agent
 **Ubuntu, Debian, Mint**
 
 ```bash
-sudo apt remove oneleet-agent
+sudo apt remove oneleet
 ```
 
 **Fedora, Rocky/RHEL**
 
 ```bash
-sudo dnf remove oneleet-agent
+sudo dnf remove oneleet
 ```
 
 **OpenSUSE**
 
 ```bash
-sudo zypper remove oneleet-agent
+sudo zypper remove oneleet
 ```
   </Tabs.Tab>
 </Tabs>
