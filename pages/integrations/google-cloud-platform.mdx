@@ -7,6 +7,19 @@ title: Google Cloud Platform (GCP)
 ## Setup
 To setup the GCP integration, navigate to the **Integrations > Add integration > Google Cloud Platform** and click **Continue**.
 
+### Troubleshooting
+
+#### Error 400: admin_policy_enforced
+
+Encountering the `Error 400: admin_policy_enforced` error while connecting Google Workspace indicates that your organization's policies are restricting access to your account data.
+
+To fix this issue:
+- Go to [Google Admin](https://admin.google.com) and navigate to **Security > Access and data control > API Controls > Manage Third Party App Access**
+- Click on **Configure new app** and choose **OAuth app name or client ID**
+- Use the following Client ID for the verified Oneleet app:
+    - `487371732991-7o3p4g81rmvdj7vj8sh9kh4rqfk5hhgc.apps.googleusercontent.com`
+- Set it as **Trusted** and click **Configure** at the bottom right
+- Once these steps are completed, attempt to link Google Workspace again
 
 ## Google Cloud VPC Setup
 
@@ -14,7 +27,6 @@ To setup the GCP integration, navigate to the **Integrations > Add integration >
 Virtual Private Clouds are virtual networks in GCP. They're most commonly used to allow services to communicate with each other. VPCs allow you to control access to services and resources you host on GCP, and the firewall and routing systems prevent unauthorized network access.
 
 ### Basic VPC Setup Guide
-
 
 1. Open the [Google Cloud Console](https://console.cloud.google.com/welcome).
 2. Open "VPC networks" from the search bar.

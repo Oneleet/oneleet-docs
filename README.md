@@ -17,7 +17,7 @@ npm run build
 ### Open the docs
 
 ```
-npm run start
+npm run dev
 ```
 
 You can then open the docs app at [http://127.0.0.1:2999](http://127.0.0.1:2999)
