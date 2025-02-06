@@ -17,11 +17,11 @@ import { Callout } from "nextra/components";
 Follow these steps and check after each one to see if the Oneleet Agent starts working:
 
 <Steps>
-### Restart Your Device
+### Restart your device
 A simple restart often resolves temporary issues or conflicts.
-### Check for Updates
+### Check for updates
 Ensure both your operating system and the Oneleet Agent are up to date.
-### Verify the Agent is Running
+### Verify the Agent is running
 <Tabs items={['macOS', 'Windows', 'Linux']}>
   <Tabs.Tab>Open **Activity Monitor** and search for "Oneleet".</Tabs.Tab>
   <Tabs.Tab>Open **Task Manager** and check for "Oneleet" in the **Processes** tab.</Tabs.Tab>
@@ -36,8 +36,16 @@ Ensure both your operating system and the Oneleet Agent are up to date.
 Follow the uninstallation steps in the [Setup Guide](/oneleet-agent/setup) and then reinstall the Oneleet Agent.
 ### Logout and login again
 Log out if already logged in and log back in.
+### As a last resort, delete all persistent configuration
+Please make sure to first quit the Oneleet Agent. Then, delete the configuration and data folders for the Oneleet Agent. The location of these folders depends on your operating system:
+<Tabs items={['macOS', 'Windows', 'Linux']}>
+  <Tabs.Tab>This should be the `~/Library/Application Support/Oneleet Agent` folder.</Tabs.Tab>
+  <Tabs.Tab>This should be the `%APPDATA%\Oneleet Agent` folder.</Tabs.Tab>
+  <Tabs.Tab>This should be the `$XDG_CONFIG_HOME/oneleet` or `~/.config/oneleet` folder.</Tabs.Tab>
+</Tabs>
+Once you have deleted the folder, restart the Oneleet Agent and log back in.
 ### Report a problem
-Contact Oneleet Support: **support@oneleet.com**. Provide details of the issue, screenshots (if applicable), and logs (by using the **View Logs** menu option) for faster resolution.
+If all the above steps fail to resolve your issue, contact Oneleet Support: **support@oneleet.com**. Provide details of the issue, screenshots (if applicable), and logs (by using the **View Logs** menu option) for faster resolution.
 </Steps>
 
 ## Windows
