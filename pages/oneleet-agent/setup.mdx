@@ -2,11 +2,11 @@
 title: Oneleet Agent setup
 ---
 
-import { Callout } from "nextra/components";
-import { Tabs } from "nextra/components";
+import { Tabs, Callout } from "nextra/components";
 
 <Callout type="warning">
-  The Oneleet Agent is currently invite-only. If you'd like to start using it, please contact us via your dedicated Slack Connect channel with us.
+  The Oneleet Agent is currently invite-only. If you'd like to start using it,
+  please contact us via your dedicated Slack channel with us.
 </Callout>
 
 # Setup
@@ -17,8 +17,9 @@ import { Tabs } from "nextra/components";
 1. Go to the [Oneleet Dashboard](https://app.oneleet.com).
 2. Click on the `People` tab.
 3. Make sure everyone you want to add is either a tenant member or an employee.
+
 <Callout type="info">
-  An employee has access to the [Oneleet Portal](https://portal.oneleet.com), while a tenant member has access to both the [Dashboard](https://app.oneleet.com) as well as the Portal.
+An employee has access to the [Oneleet Portal](https://portal.oneleet.com), while a tenant member has access to both the [Dashboard](https://app.oneleet.com) as well as the Portal.
 </Callout>
 </details>
 
@@ -44,11 +45,12 @@ Minimum system requirements for the Oneleet Agent on macOS:
 
     ### Install
 
-    The above steps should have downloaded a DMG to install the Oneleet Agent on your Mac.
+    The above steps should have downloaded a `.dmg` file to install the Oneleet Agent on your Mac.
 
-    1. Double-click on the DMG to mount it
-    2. Drag and drop the Oneleet app bundle into the **Applications** folder
-    3. You can now search for Oneleet in **Launchpad** to launch the Agent
+    1. Double-click on the `.dmg` file to mount it
+    2. Drag and drop the **Oneleet** app bundle into the **Applications** folder
+    3. You can now search for **Oneleet** in **Launchpad** to launch the Oneleet Agent, or open it directly from the **Applications** folder
+
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash
@@ -69,8 +71,8 @@ Minimum system requirements for the Oneleet Agent on macOS:
   <Tabs.Tab>
     1. Open **Finder** and go to the **Applications** folder.
     2. Locate the Oneleet app bundle.
-    3. Drag the app to the **Bin** or right-click and select **Move to Bin**.
-    4. Empty the Trash by right-clicking on the **Bin** icon and selecting **Empty Bin**.
+    3. Drag the app to the **Trash** or right-click and select **Move to Trash**.
+    4. Empty the Trash by right-clicking on the **Trash** icon and selecting **Empty Trash**.
   </Tabs.Tab>
   <Tabs.Tab>
     ```bash
@@ -96,9 +98,9 @@ Minimum system requirements for the Oneleet Agent on Windows:
 
 ## Install
 
-The above step should have downloaded a setup EXE to install the Oneleet Agent on your PC.
+The above step should have downloaded a setup `.exe` file to install the Oneleet Agent on your PC.
 
-1. Double-click on the setup EXE to run it.
+1. Double-click on the setup `.exe` file to run it.
 2. Follow the on-screen instructions to install the Oneleet Agent.
 
 ## Uninstall
@@ -130,7 +132,7 @@ Minimum system requirements for the Oneleet Agent on Linux:
 
 ## Install
 
-For DEB and RPM, install the package using the package manager. You should have `/usr/bin/oneleet-agent` available after installation apart from the Desktop entry.
+For DEB and RPM, install the package using the package manager. You should have `/usr/bin/oneleet-agent` available after installation, along with a Desktop entry.
 
 For AppImage, simply launch the application.
 
@@ -158,5 +160,6 @@ sudo dnf remove oneleet
 ```bash
 sudo zypper remove oneleet
 ```
+
   </Tabs.Tab>
 </Tabs>
