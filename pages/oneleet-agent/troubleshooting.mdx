@@ -24,11 +24,15 @@ If you still can't confirm if the Oneleet Agent is running or not, try the final
 
 <Tabs items={['macOS', 'Windows', 'Linux']}>
   <Tabs.Tab>
-  Open **Activity Monitor** and search for "Oneleet".
+  Open **Activity Monitor** and search for "Oneleet":
+
+![macOS Activity Monitor](/oneleet-agent/macos-activity-monitor.png)
 
   </Tabs.Tab>
   <Tabs.Tab>
-  Open **Task Manager** and check for "Oneleet" in the **Processes** tab.
+  Open **Task Manager** and search for "Oneleet" in the **Processes** tab:
+
+![Windows Task Manager](/oneleet-agent/windows-task-manager.png)
 
   </Tabs.Tab>
   <Tabs.Tab>
@@ -44,15 +48,47 @@ If you've confirmed that the Oneleet Agent isn't running after following the ste
 
 ### Log out and log in again
 
-If already logged in, log out by opening the Oneleet Agent menu and clicking on **Settings** > **Logout**. You should then be prompted to log in again automatically, but if not, open the Oneleet Agent menu and click **Open**.
+If already logged in, log out by opening the Oneleet Agent menu and clicking on **Help** > **Logout**.
+You should then be prompted to log in again automatically, but if not, open the Oneleet Agent menu and click on **Open**.
+
+<Tabs items={['macOS', 'Windows']}>
+  <Tabs.Tab>
+  ![macOS logout](/oneleet-agent/macos-logout.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ![Windows logout](/oneleet-agent/windows-logout.png)
+
+  </Tabs.Tab>
+</Tabs>
 
 ### Check if your Oneleet Agent version is up to date
 
 To check if your version of the Oneleet Agent is up to date, open the Oneleet Agent menu and click on **Settings** > **Check for Updates**.
 
+<Tabs items={['macOS', 'Windows']}>
+  <Tabs.Tab>
+  ![macOS check for updates](/oneleet-agent/macos-check-for-updates.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ![Windows check for updates](/oneleet-agent/windows-check-for-updates.png)
+
+  </Tabs.Tab>
+</Tabs>
+
+### Quit and restart the Oneleet Agent
+
+Quiting and restarting the Oneleet Agent can sometimes resolve temporary issues or conflicts. To quit the Oneleet Agent, open the Oneleet Agent menu and click on **Quit**. If you're unsure how to start the Oneleet agent again, see the [Setup Guide](/oneleet-agent/setup).
+
+<Tabs items={["macOS", "Windows"]}>
+  <Tabs.Tab>![macOS restart](/oneleet-agent/macos-quit.png)</Tabs.Tab>
+  <Tabs.Tab>![Windows restart](/oneleet-agent/windows-quit.png)</Tabs.Tab>
+</Tabs>
+
 ### Restart your device
 
-Restarting your device often resolves temporary issues or conflicts.
+Restarting your device can also resolve temporary issues or conflicts.
 
 ### Reinstall the Oneleet Agent
 
@@ -66,15 +102,17 @@ An out-of-date operating system could lead to issues with the Oneleet Agent. Ens
 
 As a last resort, try deleting all app data and configuration for the Oneleet Agent.
 
-First make sure to first quit the Oneleet Agent. Then, delete the data and configuration folders for the Oneleet Agent. The location of these folders depends on your operating system:
+First make sure to first quit the Oneleet Agent. Then, delete the app data folder for the Oneleet Agent. The location of this folder depends on your operating system:
 
 <Tabs items={['macOS', 'Windows', 'Linux']}>
   <Tabs.Tab>
   Delete the `~/Library/Application Support/Oneleet Agent` folder.
+    - To find the **Library** folder, open a new Finder window and press `Command` + `Shift` + `L` to directly open it.
 
   </Tabs.Tab>
   <Tabs.Tab>
   Delete the `%APPDATA%\Oneleet Agent` folder.
+    - To find the **AppData** folder, either open a new File Explorer window and enter `%APPDATA%` in the address bar, or press `Windows` + `R` to open the Run dialog, then type `%APPDATA%` and press `Enter`.
 
   </Tabs.Tab>
   <Tabs.Tab>
@@ -82,7 +120,7 @@ First make sure to first quit the Oneleet Agent. Then, delete the data and confi
   
   </Tabs.Tab>
 </Tabs>
-Once you've deleted these folders, restart the Oneleet Agent and log back in.
+Once you've deleted this folder, restart the Oneleet Agent and log back in.
 
 ### Get in touch
 
@@ -97,24 +135,30 @@ To access the logs for the Oneleet Agent, follow these steps:
 <Tabs items={["macOS", "Windows", "Linux"]}>
   <Tabs.Tab>
     1. Find and click on the Oneleet icon in your menu bar (top right of your screen)
-       - If you don't see the Oneleet icon in your menu bar, see the [I can't see the Oneleet icon in my menu bar](#i-cant-see-the-oneleet-icon-in-my-menu-bar) section below.
-    2. Click on **Help** in the dropdown menu that appears
-    3. Click on **View Logs** in the submenu that appears
-    4. A new **main.log** window will open that contains the logs for the Oneleet Agent
-    5. Click on the **Reveal in Finder** button in the top right of that window
-    6. This will open the `~/Library/Logs/Oneleet Agent` folder in Finder where you'll see a `main.log` file that you can share with us
-    7. As a last resort, you can also find the logs directly by navigating to `~/Library/Logs/Oneleet Agent/main.log`
-        - If you're having trouble finding your Library folder, open a new Finder window and press `Command` + `Shift` + `L` to directly open it.
-
-        ![macOS logs](/oneleet-agent/macos-logs.png)
+       - If you don't see the Oneleet icon in your menu bar, see the [I can't see the Oneleet icon in my menu bar](#i-cant-see-the-oneleet-icon-in-my-menu-bar) section below
+    2. Hover over **Help** in the dropdown menu that appears
+    3. Click on **View Logs** in the submenu that appears.
+       ![macOS logs](/oneleet-agent/macos-view-logs.png)
+    4. This will open a new **main.log** file window that contains the logs for the Oneleet Agent.
+       ![macOS logs](/oneleet-agent/macos-main-log.png)
+    5. Click on **Reveal** in the top right of that window. This will open the `~/Library/Logs/Oneleet Agent` folder in Finder where you'll see the `main.log` file that you can share with us.
+       ![macOS logs](/oneleet-agent/macos-main-log-reveal.png)
+    6. As a last resort, you can also find the logs directly by navigating to `~/Library/Logs/Oneleet Agent/main.log`
+        - To find the **Library** folder, open a new Finder window and press `Command` + `Shift` + `L` to directly open it.
 
   </Tabs.Tab>
   <Tabs.Tab>
-    1. Find and click on the Oneleet Agent icon in your Windows system tray (bottom right of your screen)
-    2. Click on **Help** in the dropdown menu that appears
-    3. Click on **View Logs** in the submenu that appears
-    4. This will open a `main.log` file containing the logs for the Oneleet Agent which you can share with us
-    5. As a last resort, you can also find the logs directly by opening File Explorer and navigating to `%USERPROFILE%\AppData\Roaming\Oneleet Agent\logs\main.log`
+    1. Find and right-click on the Oneleet Agent icon in your Windows system tray (bottom right of your screen)
+    2. Hover over **Help** in the dropdown menu that appears
+    3. Click on **View Logs** in the submenu that appears.
+       ![Windows logs](/oneleet-agent/windows-view-logs.png)
+    4. This will open a new `main.log` file window containing the logs for the Oneleet Agent
+       ![Windows logs](/oneleet-agent/windows-main-log.png)
+    5. Click on **File** in the top left of that window
+    6. Click on **Save as** in the dropdown menu that appears
+       ![Windows logs](/oneleet-agent/windows-main-log-save-as.png)
+    7. Save the file somewhere you can easily access it, like your desktop. Once saved, you can share the file with us.
+    8. As a last resort, you can also find the logs directly by either opening File Explorer and entering `%USERPROFILE%\AppData\Roaming\Oneleet Agent\logs\main.log` in the address bar, or by pressing `Windows` + `R` to open the Run dialog, then typing `%USERPROFILE%\AppData\Roaming\Oneleet Agent\logs\main.log` and pressing `Enter`.
 
   </Tabs.Tab>
   <Tabs.Tab>
@@ -123,6 +167,41 @@ To access the logs for the Oneleet Agent, follow these steps:
     3. Click on **View Logs** in the submenu that appears
     4. This will open a `main.log` file containing the logs for the Oneleet Agent which you can share with us
     5. As a last resort, you can also find the logs directly by navigating to `~/.config/Oneleet Agent/logs/main.log`
+
+  </Tabs.Tab>
+</Tabs>
+
+## The Oneleet Agent is not starting automatically when I restart my computer
+
+To ensure the Oneleet Agent starts automatically when you restart your computer, see the below steps for your operating system:
+
+<Tabs items={["macOS", "Windows", "Linux"]}>
+  <Tabs.Tab>
+    1. Open the Oneleet Agent menu in your menu bar (top right of your screen)
+        - If you don't see the Oneleet icon in your menu bar, see the [I can't see the Oneleet icon in my menu bar](#i-cant-see-the-oneleet-icon-in-my-menu-bar) section below
+    2. Hover over **Settings** in the dropdown
+    menu that appears 
+    3. Ensure the **Launch Oneleet at login** setting is checked off in the submenu that appears
+
+    ![macOS launch Oneleet at login](/oneleet-agent/macos-launch-at-login.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    1. Open the Oneleet Agent menu in your system tray (bottom right of your screen)
+    2. Hover over **Settings** in the dropdown menu that appears
+    3. Ensure the **Launch Oneleet at login** setting is checked off in the submenu that appears
+
+    ![Windows launch Oneleet at login](/oneleet-agent/windows-launch-at-login.png)
+
+    If you've done this and the Oneleet Agent still doesn't automatically start on startup, please follow Microsoft's [documentation on configuring startup applications in Windows](https://support.microsoft.com/en-us/windows/configure-startup-applications-in-windows-115a420a-0bff-4a6f-90e0-1934c844e473).
+
+If the above still doesn't resolve the issue, please follow the [delete all Oneleet Agent app data](#delete-all-oneleet-agent-app-data) step in the general troubleshooting section above.
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    1. Open the Oneleet Agent menu in your Linux desktop panel
+    2. Hover over **Settings** in the dropdown menu that appears
+    3. Ensure the **Launch Oneleet at login** setting is checked off in the submenu that appears
 
   </Tabs.Tab>
 </Tabs>
@@ -148,12 +227,6 @@ Here are the steps to determine why Device Encryption might not be available:
    - Meets prerequisites: Device Encryption is available on your device
    - TPM is not usable: your device doesn't have a Trusted Platform Module (TPM), or the TPM isn't enabled in the BIOS or in the UEFI
    - WinRE is not configured: your device doesn't have Windows Recovery Environment configured
-   - PCR7 binding is not supported: Secure Boot is disabled in the BIOS/UEFI, or you have peripherals connected to your device during boot (like specialized network interfaces, docking stations, or external graphic card)
+   - PCR7 binding is not supported: Secure Boot is disabled in the BIOS/UEFI, or you have peripherals connected to your device during boot (like specialized network interfaces, docking stations, or external graphic cards)
 
-For more information, see the official [Microsoft documentation](https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df).
-
-### Oneleet Agent does not automatically start on boot
-
-If the Oneleet Agent doesn't automatically start on boot, please follow the official [Microsoft documentation](https://support.microsoft.com/en-us/windows/configure-startup-applications-in-windows-115a420a-0bff-4a6f-90e0-1934c844e473) for your Windows PC.
-
-If the above still doesn't resolve the issue, please follow the [delete all Oneleet Agent app data](#delete-all-oneleet-agent-app-data) step in the general troubleshooting section above.
+For more information, see Microsoft's [documentation on device encryption in Windows](https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df).
