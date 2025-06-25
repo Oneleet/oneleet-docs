@@ -2,10 +2,11 @@
 title: Oneleet Agent FAQ
 ---
 
-import { Callout } from "nextra/components";
+import { Tabs, Callout } from "nextra/components";
 
 <Callout type="warning">
-  The Oneleet Agent is currently invite-only. If you'd like to start using it, please contact us via your dedicated Slack Connect channel with us.
+  The Oneleet Agent is currently invite-only. If you'd like to start using it,
+  please contact us via your dedicated Slack channel with us.
 </Callout>
 
 # Frequently Asked Questions
@@ -26,13 +27,43 @@ Visit the [**Setup**](/oneleet-agent/setup) page for instructions on how to down
 
 Installing the Oneleet Agent ensures your device meets the required security and compliance standards. It enables your organization to monitor essential security settings, detect potential vulnerabilities, and respond quickly to risks. Without it, your device may not meet compliance requirements, potentially exposing sensitive data to threats.
 
-### I just updated my setting and the Oneleet Agent check is still failing, what should I do?
+### Once the Oneleet Agent is running, where can I find it?
 
-It will take approximately up to an hour for the Agent to check the new state and to verify if it is passing or not. If after an hour this doesn't change you may follow the steps in the [**Troubleshooting**](/oneleet-agent/troubleshooting) guide(s) to resolve any underlying issues.
+<Tabs items={["macOS", "Windows", "Linux"]}>
+  <Tabs.Tab>
+    When running, the Oneleet Agent appears as an icon in your macOS menu
+    bar at the top right of your screen that opens a dropdown menu when clicked. If you started the Oneleet Agent but don't see the icon in your menu bar, 
+    see the [I can't see the Oneleet icon in my menu bar](/oneleet-agent/troubleshooting#i-cant-see-the-oneleet-icon-in-my-menu-bar) section in our Troubleshooting guide.
+
+    ![macOS menu bar](/oneleet-agent/macos-menu-bar.png)
+
+    To see the status of your device monitors and remediation instructions, click on **Open** in the dropdown menu:
+    ![macOS open window](/oneleet-agent/macos-opened.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    When running, the Oneleet Agent appears as an icon in your Windows system tray that opens a dropdown menu when right-clicked. Look for it at the bottom right of your screen under the **Show hidden icons** arrow.
+
+    ![Windows system tray](/oneleet-agent/windows-system-tray.png)
+
+    To see the status of your device's monitors and remediation instructions, click on **Open** in the dropdown menu:
+    ![Windows open window](/oneleet-agent/windows-opened.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    When running, the Oneleet Agent appears as a clickable Oneleet icon in your Linux desktop
+    panel, which may be located at the top or bottom of your screen (exact
+    location may vary depending on your desktop environment and configuration).
+  </Tabs.Tab>
+</Tabs>
+
+### I just updated my settings and a Oneleet Agent monitor is still failing, what should I do?
+
+It can take up to an hour for the Agent to recheck your device's state and verify if it's passing or not. If after an hour this doesn't change, try following the steps in the [**Troubleshooting**](/oneleet-agent/troubleshooting) guide to resolve any underlying issues.
 
 ### Who has access to the data collected by the Oneleet Agent?
 
-Only the admin(s) of your organization can view the results of checks that run on your device. Below is a screenshot of what it looks like for the admin(s).
+Only the admin(s) of your organization can view the results of checks that run on your device. Below is a screenshot of what it looks like for your admin(s).
 
 ![Admin view of Devices](/oneleet-agent/device-admin-view.png)
 
