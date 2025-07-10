@@ -24,12 +24,13 @@ Oneleet currently requests the following read-only permissions within AWS:
       "Action": [
         "account:ListRegions",
         "cloudtrail:LookupEvents",
-        "cloudwatch:DescribeAlarmsForMetric",
         "cloudwatch:DescribeAlarms",
+        "cloudwatch:DescribeAlarmsForMetric",
         "dynamodb:DescribeContinuousBackups",
         "dynamodb:DescribeTable",
         "dynamodb:ListTables",
         "dynamodb:ListTagsOfResource",
+        "ec2:DescribeInstances",
         "ec2:DescribeSecurityGroups",
         "ecr:DescribeImages",
         "ecr:DescribeRegistry",
@@ -39,11 +40,14 @@ Oneleet currently requests the following read-only permissions within AWS:
         "ecr:ListTagsForResource",
         "elasticloadbalancing:DescribeListeners",
         "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeRules",
         "elasticloadbalancing:DescribeTags",
         "elasticloadbalancing:DescribeTargetGroups",
+        "elasticfilesystem:DescribeFileSystems",
         "iam:GetAccountPasswordPolicy",
         "iam:GetLoginProfile",
         "iam:ListMFADevices",
+        "iam:ListServerCertificates",
         "iam:ListUsers",
         "inspector:DescribeFindings",
         "inspector:ListFindings",
@@ -59,6 +63,7 @@ Oneleet currently requests the following read-only permissions within AWS:
         "rds:DescribeDBInstances",
         "s3:GetBucketAcl",
         "s3:GetBucketLocation",
+        "s3:GetBucketPublicAccessBlock",
         "s3:GetBucketTagging",
         "s3:GetBucketVersioning",
         "s3:ListAllMyBuckets",
@@ -98,3 +103,51 @@ You can prevent AWS resources from being read into Oneleet by adding the tag `on
 ### I'm seeing duplicated resources across my AWS accounts
 
 This can occur if you’ve copied the same external ID to multiple AWS accounts. Please make sure you’ve connected a unique external ID to each account.
+
+## Updates
+
+### 2025-07-10
+
+#### What's changing?
+
+We're enhancing our Amazon Web Services integration to improve the scope and reliability of our monitoring. As part of this change, we will soon require the following **additional permissions** on your IAM role for Oneleet:
+
+- `ec2:DescribeInstances` - Monitor EC2 instance configuration details
+- `elasticloadbalancing:DescribeRules` - Monitor Elastic Load Balancing rules and forwarding
+- `elasticfilesystem:DescribeFileSystems` - Monitor Elastic File System configuration
+- `iam:ListServerCertificates` - Monitor server certs for expiration, encryption and configuration
+- `s3:GetBucketPublicAccessBlock` - Monitor S3 public access configuration
+
+These additions allow us to better monitor details of your AWS configuration.
+
+#### Action required
+
+If you connected AWS with Oneleet on or after **June 11, 2025 (2025-06-11)**, then you've already granted these permissions, and no further action is required.
+
+Otherwise, update the permissions on your IAM role for Oneleet as soon as possible to maintain full functionality. You have two options:
+
+##### Option 1 (recommended): Update your IAM role for Oneleet
+
+If you choose this method, changes will take effect immediately, and no reconnection is required.
+
+1. Sign in to your AWS Console.
+2. Navigate to IAM > Roles > _your-oneleet-role-name_.
+3. Add the new required permissions:
+
+   ```
+   "ec2:DescribeInstances",
+   "elasticloadbalancing:DescribeRules",
+   "elasticfilesystem:DescribeFileSystems",
+   "iam:ListServerCertificates",
+   "s3:GetBucketPublicAccessBlock"
+   ```
+
+Repeat this for any additional AWS connections you have.
+
+##### Option 2: Recreate your AWS connection
+
+1. On the Oneleet platform, go to Integrations → Amazon Web Services → "Settings" tab.
+2. Under **Active connections**, find your connection and remove it. Do **not** remove the entire integration.
+3. Add a new AWS connection by following the on-screen instructions.
+
+Repeat this for any additional AWS connections you have.

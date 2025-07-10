@@ -11,6 +11,7 @@ To setup the Google Workspace integration, navigate to the **Integrations > Add 
 ### Which permissions does Oneleet require?
 
 Oneleet currently requests the following read-only permissions within Google Workspace:
+
 - View audit reports
 - View domains
 - View user information
@@ -18,6 +19,7 @@ Oneleet currently requests the following read-only permissions within Google Wor
 ### Which resources does Oneleet monitor?
 
 Oneleet currently monitors the following on Google Workspace:
+
 - User accounts
 - GMail settings
 
@@ -36,3 +38,25 @@ If you are experiencing difficulties connecting Oneleet to Google Workspace due 
 9. Click **Finish** to complete the setup.
 
 By following these steps, you should be able to successfully connect Oneleet to your Google Workspace.
+
+## Updates
+
+### 2025-07-10
+
+#### What's changing?
+
+We're updating our Google Workspace integration to more reliably monitor your Gmail security configuration. As part of this change, we now require the following **additional permissions**:
+
+- Cloud Identity Read-only Access
+
+After this change, your monitors should exhibit fewer false positives.
+
+#### Action required
+
+Please reconnect your Google Workspace integration and accept the new permissions as soon as possible. Your existing connection settings will be preserved.
+
+1. On the Oneleet platform, go to Integrations → Google Workspace → "Settings" tab.
+2. Under **Active connections**, find your connection and click **Reconnect**. Do **not** remove the entire integration.
+3. Click "Connect", and authorize the new permissions.
+
+Repeat this for any additional Google Workspace connections you have.
