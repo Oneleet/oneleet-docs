@@ -1,5 +1,6 @@
 export default {
   "index": "Introduction",
+  "access": "Access",
   "integrations": "Integrations",
   "oneleet-agent": "Oneleet Agent",
   "guides": "Guides",
