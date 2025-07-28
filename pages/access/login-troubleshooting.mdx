@@ -1,0 +1,71 @@
+---
+title: Login troubleshooting
+---
+
+import { Steps } from "nextra/components";
+
+# Login troubleshooting
+
+If you're having trouble logging in to Oneleet, try following the steps below:
+
+<Steps>
+### 1. Close all Oneleet tabs and start in a fresh browser tab
+
+First, close every browser tab that you currently have open for Oneleet across all windows. Then, open a single new browser tab and try logging in again.
+
+> Having multiple Oneleet login pages open at once can cause session mismatches and prevent a successful login.
+
+### 2. Clear your cookies and site data
+
+Clear all Oneleet-related cookies and site data (including `auth.oneleet.com` and `oneleet.com`), then try logging in again.
+
+> **Example:** clearing cookies and site data in Chrome
+
+![Screenshot showing Chrome cookie clearing interface 1](/access/troubleshooting/chrome-clear-cookies-and-site-data-1.png)
+
+![Screenshot showing Chrome cookie clearing interface 2](/access/troubleshooting/chrome-clear-cookies-and-site-data-2.png)
+
+![Screenshot showing Chrome cookie clearing interface 3](/access/troubleshooting/chrome-clear-cookies-and-site-data-3.png)
+
+### 3. Force a logout
+
+1. Open a new browser tab
+2. Visit `https://api.oneleet.com/api/v1/users/logout/app`  
+   • If you’re redirected to the login page, try logging in again  
+   • If you see an **Unauthorized** message, move on to the next step
+
+> Visiting the above URL ends your current session and can sometimes resolve issues with stale sessions
+
+### 4. Try an incognito window
+
+Try logging in through an incognito/private browser window.
+
+### 5. Try a different browser
+
+Try logging in with another browser.
+
+### 6. Issues with two-factor authentication
+
+If you're having issues with two-factor authentication codes not working:
+
+##### 1. Check if you're using the right code
+
+Double check that you're using the right code for the email you're trying to log in with, and not a code that you set up for a different email.
+
+##### 2. Make sure your device's clock is properly synced
+
+If you followed the normal setup flow for two-factor authentication and your codes are simply not working, confirm that your device clock is synced with the respective clock servers:
+
+- **Apple devices**: Follow [Apple's time sync guide](https://support.apple.com/en-al/101619) (see section "Set the date and time automatically")
+- **Android devices**: Follow [Google's time sync guide](https://support.google.com/googleplay/thread/55723112?hl=en&msgid=55728968) or [Android's date & time settings](https://support.google.com/android/answer/2841106?hl=en)
+- **Windows devices**: Follow [Microsoft's time zone guide](https://support.microsoft.com/en-us/windows/how-to-set-your-time-and-time-zone-dfaa7122-479f-5b98-2a7b-fa0b6e01b261) and make sure it's configured correctly
+
+### 7. Get in touch
+
+If none of the above works, reach out to us via your dedicated Slack channel with us or at support@oneleet.com and share the details below so we can help resolve your issue more quickly:
+
+1. A screenshot of the error page you're seeing
+2. The URL of the error page
+3. If you're trying to log in with Google and your email recently changed because your company migrated to a new domain, please include both your previous and new email addresses
+
+</Steps>
