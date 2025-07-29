@@ -1,0 +1,52 @@
+{
+  "$comment": "See https://docs.oneleet.com/code-security/ignore-rules",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Oneleet Code Security ignore rules",
+  "type": "object",
+  "properties": {
+    "version": {
+      "title": "Schema version",
+      "const": 1
+    },
+    "ignores": {
+      "title": "Ignore rules",
+      "description": "List of ignore rules, which will be OR'd together.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ruleIds": {
+            "title": "Issue identifiers",
+            "description": "List of issue identifiers (SARIF \"ruleId\"s) to ignore. If not set, all issues are ignored.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pathPatterns": {
+            "title": "Path patterns",
+            "description": "List of glob patterns for file paths to ignore. If not set, the ignore applies to all files in the repository.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "title": "Reason",
+            "description": "Optionally document why you've suppressed this class of issues.",
+            "type": "string"
+          }
+        },
+        "anyOf": [
+          {
+            "required": ["ruleIds"]
+          },
+          {
+            "required": ["pathPatterns"]
+          }
+        ]
+      }
+    }
+  },
+  "required": ["version", "ignores"]
+}

@@ -5,6 +5,7 @@ export default {
   "oneleet-agent": "Oneleet Agent",
   "guides": "Guides",
   "penetration-testing": "Penetration Testing",
+  "code-security": "Code Security",
   "support": {
     "title": "Support",
     "type": "page",

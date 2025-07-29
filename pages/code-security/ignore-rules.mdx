@@ -1,0 +1,104 @@
+---
+title: Ignore rules
+---
+
+# Ignore rules
+
+You may want to suppress "noisy," low-value Code Security findings. These may be findings you have consistently resolved as "False Positive" (not actual security issues) or "Accepted Risk" (genuine issues, but low severity and not worth fixing).
+
+To do so, you can add ignore rules for issues or files. Your ignore rules will automatically suppress future findings that match the rule. If you add ignore rules, please let us know why! We want to keep improving our Code Security product and boost signal-to-noise for all of our customers.
+
+A word of caution: since ignore rules may hide genuine future issues, we suggest minimizing their number and scope. However, you have the final say.
+
+## Dotfile ignore rules
+
+You can suppress issues in a single repository by adding an ignore rules dotfile. There are three formats to choose from: JSON (**recommended**), YAML, or .gitignore style.
+
+When Code Security scans your repository, it looks for ignore rules in the following files **at the root level**:
+
+- **.oneleetignore.json**
+- **.oneleetignore.yaml** or **.oneleetignore.yml**
+- **.oneleetignore**
+
+If multiple dotfiles are present, Code Security will OR together the rules they define.
+
+### .oneleetignore.json
+
+We recommend this JSON format because it's both simple and feature-complete.
+
+Start from the following template:
+
+```json
+{
+  "$schema": "https://docs.oneleet.com/code-security/oneleetignore.schema.json",
+  "version": 1,
+  "ignores": [
+    <your-ignore-rules>
+  ]
+}
+```
+
+If you use VSCode or Cursor, enable the setting [`json.schemaDownload.enable`](https://code.visualstudio.com/docs/languages/json#_offline-mode) and you should be able to code complete to victory.
+
+For example, the following rule ignores two issues for `.js` files under the `/examples` directory:
+
+```json
+{
+  "$schema": "https://docs.oneleet.com/code-security/oneleetignore.schema.json",
+  "version": 1,
+  "ignores": [
+    {
+      "ruleIds": [
+        "javascript.language.eval.dynamic-code",
+        "javascript.react.dangerouslysetinnerhtml"
+      ],
+      "pathPatterns": ["/examples/**/*.js"],
+      "reason": "Example code only"
+    }
+  ]
+}
+```
+
+At least one of `ruleIds` and `pathPatterns` is required. The optional reason message (`"Example code only"`) documents why you've suppressed this class of findings.
+
+### .oneleetignore.yaml
+
+The YAML format is the same as the JSON format, but with YAML syntax. Start from the following template:
+
+```yaml
+$schema: https://docs.oneleet.com/code-security/oneleetignore.schema.json
+version: 1
+ignores:
+  - <your-ignore-rule>
+  - <your-ignore-rule>
+  - ...
+```
+
+Here's the JSON example translated to YAML:
+
+```yaml
+$schema: https://docs.oneleet.com/code-security/oneleetignore.schema.json
+version: 1
+ignores:
+  - ruleIds:
+      - javascript.language.eval.dynamic-code
+      - javascript.react.dangerouslysetinnerhtml
+    pathPatterns:
+      - /examples/**/*.js
+    reason: Example code only
+```
+
+### .oneleetignore
+
+This follows the [.gitignore format](https://git-scm.com/docs/gitignore). Unlike .gitignore, this file must be at the root of the repository.
+
+This format is a blunt instrument. Files matching the glob patterns will be exempt from **all** `ruleIds`, and `reason` messages are not supported. If you need more granularity, consider using the JSON or YAML format instead.
+
+```sh
+README.md
+*.txt
+
+# Comment
+dir/
+/.github/**/*.{yml,yaml}
+```
