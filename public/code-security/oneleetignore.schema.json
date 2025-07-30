@@ -4,6 +4,14 @@
   "title": "Oneleet Code Security ignore rules",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$comment": {
+      "title": "Comment",
+      "description": "Ignored at runtime.",
+      "type": "string"
+    },
     "version": {
       "title": "Schema version",
       "const": 1
@@ -21,7 +29,8 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "minItems": 1
           },
           "pathPatterns": {
             "title": "Path patterns",
@@ -29,11 +38,17 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "minItems": 1
           },
           "reason": {
             "title": "Reason",
             "description": "Optionally document why you've suppressed this class of issues.",
+            "type": "string"
+          },
+          "$comment": {
+            "title": "Comment",
+            "description": "Ignored at runtime.",
             "type": "string"
           }
         },
@@ -44,9 +59,11 @@
           {
             "required": ["pathPatterns"]
           }
-        ]
+        ],
+        "additionalProperties": false
       }
     }
   },
-  "required": ["version", "ignores"]
+  "required": ["version", "ignores"],
+  "additionalProperties": false
 }
