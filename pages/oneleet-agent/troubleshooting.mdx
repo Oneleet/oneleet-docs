@@ -44,7 +44,54 @@ If you still can't confirm if the Oneleet Agent is running or not, try the final
   </Tabs.Tab>
 </Tabs>
 
-If you've confirmed that the Oneleet Agent isn't running after following the steps above, skip to the [Restart your device](#restart-your-device) step below.
+### Make sure the Oneleet Agent has the permissions it needs (macOS only)
+
+On macOS, the Oneleet Agent needs certain permissions enabled in order to run properly. To check if it has the permissions it needs, follow the steps below:
+
+1. Open **System Settings** → **Privacy & Security** → **Automation**
+2. Click on **Oneleet** to expand it and see which permissions are enabled
+3. Make sure the **System Settings** and **System Events** permissions are both enabled
+
+![macOS permissions](/oneleet-agent/macos-permissions.png)
+
+If you made any changes to enable the permissions, you'll need to quit and restart the Oneleet Agent to apply them.
+
+### Quit and restart the Oneleet Agent
+
+Quitting and restarting the Oneleet Agent can sometimes resolve temporary issues or conflicts. To quit the Oneleet Agent, open the Oneleet Agent menu and click on **Quit**. If you're unsure how to start the Oneleet agent again, see the [Setup Guide](/oneleet-agent/setup).
+
+<Tabs items={["macOS", "Windows"]}>
+  <Tabs.Tab>![macOS restart](/oneleet-agent/macos-quit.png)</Tabs.Tab>
+  <Tabs.Tab>![Windows restart](/oneleet-agent/windows-quit.png)</Tabs.Tab>
+</Tabs>
+
+If you can't find the Oneleet Agent menu, see the [Once the Oneleet Agent is running, where can I find it?](/oneleet-agent/faq#once-the-oneleet-agent-is-running-where-can-i-find-it) section of our FAQ. If you still can't find the Oneleet Agent menu after this, try finding and quitting the Oneleet Agent process directly:
+
+<Tabs items={["macOS", "Windows", "Linux"]}>
+  <Tabs.Tab>
+    1. Open **Activity Monitor** and search for "Oneleet" 
+    2. Click on the Oneleet Agent process in the list and click the **X** button towards the top of the window
+    3. Click on the **Quit** button in the dialog that appears.
+    4. If that doesn't work, follow step 2 again and click the **Force Quit** button instead.
+
+    ![macOS quit](/oneleet-agent/macos-quit-activity-monitor.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    1. Open **Task Manager** and search for "Oneleet" in the **Processes** tab
+    2. Right-click on the Oneleet Agent process in the list and click **End Task**
+
+    ![Windows quit](/oneleet-agent/windows-quit-task-manager.png)
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    1. In your terminal, run `ps aux | grep oneleet`
+    2. Find the Oneleet Agent process in the output and note its PID (process ID) in the second column
+    3. Kill the process by running: `kill <PID>` (replace `<PID>` with the process ID)
+    4. If that doesn't work, force kill it with: `kill -9 <PID>`
+
+  </Tabs.Tab>
+</Tabs>
 
 ### Log out and log in again
 
@@ -77,22 +124,13 @@ To check if your version of the Oneleet Agent is up to date, open the Oneleet Ag
   </Tabs.Tab>
 </Tabs>
 
-### Quit and restart the Oneleet Agent
-
-Quiting and restarting the Oneleet Agent can sometimes resolve temporary issues or conflicts. To quit the Oneleet Agent, open the Oneleet Agent menu and click on **Quit**. If you're unsure how to start the Oneleet agent again, see the [Setup Guide](/oneleet-agent/setup).
-
-<Tabs items={["macOS", "Windows"]}>
-  <Tabs.Tab>![macOS restart](/oneleet-agent/macos-quit.png)</Tabs.Tab>
-  <Tabs.Tab>![Windows restart](/oneleet-agent/windows-quit.png)</Tabs.Tab>
-</Tabs>
-
 ### Restart your device
 
 Restarting your device can also resolve temporary issues or conflicts.
 
 ### Reinstall the Oneleet Agent
 
-First, follow the uninstallation steps in the [Setup Guide](/oneleet-agent/setup). Once uninstalled, and follow the download and installation steps to download and install a fresh copy of the Oneleet Agent.
+First, follow the uninstallation steps in the [Setup Guide](/oneleet-agent/setup). Once uninstalled, follow the download and installation steps to download and install a fresh copy of the Oneleet Agent.
 
 ### Ensure your operating system is up to date
 
@@ -102,7 +140,7 @@ An out-of-date operating system could lead to issues with the Oneleet Agent. Ens
 
 As a last resort, try deleting all app data and configuration for the Oneleet Agent.
 
-First make sure to first quit the Oneleet Agent. Then, delete the app data folder for the Oneleet Agent. The location of this folder depends on your operating system:
+First make sure to quit the Oneleet Agent. Then, delete the app data folder for the Oneleet Agent. The location of this folder depends on your operating system:
 
 <Tabs items={['macOS', 'Windows', 'Linux']}>
   <Tabs.Tab>
@@ -179,14 +217,17 @@ To ensure the Oneleet Agent starts automatically when you restart your computer,
   <Tabs.Tab>
     1. Open the Oneleet Agent menu in your menu bar (top right of your screen)
         - If you don't see the Oneleet icon in your menu bar, see the [I can't see the Oneleet icon in my menu bar](#i-cant-see-the-oneleet-icon-in-my-menu-bar) section below
-    2. Hover over **Settings** in the dropdown
-    menu that appears 
+    2. Hover over **Settings** in the dropdown menu that appears 
     3. Ensure the **Launch Oneleet at login** setting is checked off in the submenu that appears
 
     ![macOS launch Oneleet at login](/oneleet-agent/macos-launch-at-login.png)
 
   </Tabs.Tab>
   <Tabs.Tab>
+    <Callout type="warning">
+      There's a known ongoing issue where the Oneleet Agent does not start automatically on Windows even when **Launch Oneleet at login** is enabled. Until we're able to release a fix for this, the Oneleet Agent will need to be manually started after each reboot.
+    </Callout>
+
     1. Open the Oneleet Agent menu in your system tray (bottom right of your screen)
     2. Hover over **Settings** in the dropdown menu that appears
     3. Ensure the **Launch Oneleet at login** setting is checked off in the submenu that appears
@@ -210,11 +251,17 @@ If the above still doesn't resolve the issue, please follow the [delete all Onel
 
 ### I can't see the Oneleet icon in my menu bar
 
-If you can't see the Oneleet icon in your Mac's menu bar, either the Oneleet Agent is not running, or it may simply be hidden because there are too many apps displaying in your menu bar and not enough space to display an icon for the Oneleet Agent.
+If you can't see the Oneleet icon in your Mac's menu bar, this could either be because the Oneleet Agent is not running, the Oneleet Agent is missing required permissions to run properly, or because there are simply too many apps displaying in your menu bar and not enough space to display an icon for the Oneleet Agent.
 
-First, check to make sure the Oneleet Agent is actually running by following the [Check if the Oneleet Agent is running](#check-if-the-oneleet-agent-is-running) step in the general troubleshooting section above.
+1. First, check to make sure the Oneleet Agent is actually running by following the [Check if the Oneleet Agent is running](#check-if-the-oneleet-agent-is-running) step in the general troubleshooting section above.
 
-If you've confirmed that it's running but still can't see the Oneleet icon in your menu bar, try freeing up some space in your menu bar to make room for the Oneleet icon by temporarily right-clicking and quitting some of the apps in your menu bar. A general rule of thumb is that if you quit one of the apps in your menu bar and a new app icon appears on the lefthand side of the menu bar that you didn't see before, the Oneleet icon is likely being hidden because of a lack of space in the menu bar.
+2. If you've confirmed that the Oneleet Agent is running but still can't see the Oneleet icon in your menu bar, follow the [Make sure the Oneleet Agent has the permissions it needs (macOS only)](#make-sure-the-oneleet-agent-has-the-permissions-it-needs-macos-only) step in the general troubleshooting section above to make sure the Oneleet Agent has the permissions it needs to run properly.
+
+3. If you've confirmed that the Oneleet Agent is running and has the required permissions but still can't see the Oneleet icon in your menu bar, try freeing up space in your menu bar by temporarily quitting some menu bar apps (right-click and quit). If quitting an app reveals a new icon on the left side of the menu bar that you didn't see before, the Oneleet icon is likely hidden due to lack of space.
+
+### Autofix isn't working
+
+If autofix isn't working, see the [Make sure the Oneleet Agent has the permissions it needs (macOS only)](#make-sure-the-oneleet-agent-has-the-permissions-it-needs-macos-only) step in the general troubleshooting section above to make sure the Oneleet Agent has the permissions it needs to update the settings on your device.
 
 ## Windows
 
