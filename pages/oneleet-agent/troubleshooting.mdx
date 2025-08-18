@@ -277,3 +277,30 @@ Here are the steps to determine why Device Encryption might not be available:
    - PCR7 binding is not supported: Secure Boot is disabled in the BIOS/UEFI, or you have peripherals connected to your device during boot (like specialized network interfaces, docking stations, or external graphic cards)
 
 For more information, see Microsoft's [documentation on device encryption in Windows](https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df).
+
+## Ubuntu
+
+### "The SUID sandbox helper binary was found, but is not configured correctly"
+
+Canonical recently [changed Ubuntu's default AppArmor profiles](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces) to restrict usage of a kernel feature required for Chromium sandboxing. As an Electron app, the Oneleet Agent uses Chromium sandboxing as a security measure, and it will refuse to start if it cannot create the sandbox.
+
+We plan to resolve this in a future update by automatically configuring an AppArmor policy for the Agent. In the meantime, you can add the policy yourself by creating a file at `/etc/apparmor.d/oneleetagent` with the following content:
+
+```ansi copy
+abi <abi/4.0>,
+include <tunables/global>
+
+profile oneleetagent /path/to/oneleet-agent flags=(default_allow) {
+  userns,
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/oneleetagent>
+}
+```
+
+Replace `/path/to/oneleet-agent` as follows:
+
+- If you installed the `.deb`, use the path to the `oneleet-agent` binary (`/usr/bin/oneleet-agent` by default).
+- If you're using the AppImage, use the path to the `.AppImage` file.
+
+See [this answer on Ask Ubuntu](https://askubuntu.com/a/1528215) for additional context.
