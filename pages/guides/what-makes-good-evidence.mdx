@@ -1,0 +1,53 @@
+Getting certified (like SOC2 or ISO 27001) means a trusted third party confirms your company meets key security standards. Since auditors can’t see everything, you need to give them clear proof that you actually follow your security practices.
+
+For SOC 2 specifically:
+
+- Scope typically focuses on customer production data — the systems, processes, and environments that store, process, or transmit it. Other areas can be added if they impact the Trust Services Criteria.
+- SOC 2 is flexible — you can adapt or exclude controls if they’re not relevant, but you must document why, ensure alignment with the Trust Services Criteria, and flag this to the Oneleet team so it can be reviewed and updated on the platform for your program.
+
+This is your guide to what kind of evidence to upload, how much to include, and how to make sure it’s aligned to auditor’s requirements. 
+
+## Four types of evidence
+
+You can think of evidence as falling into four buckets:
+
+| **Evidence type** | **What it shows** | **Think of it like this…**  | **Examples** |
+| --- | --- | --- | --- |
+| ✍️ **Policy, process or procedure** | The requirements and workflow are defined and documented | “We say we do this.” | Access management policy, onboarding checklist, incident response procedure |
+| 📌 **Configuration evidence** | A system or setting is configured correctly | “Here’s how it’s set up in our systems.” | Screenshot of MFA enabled, firewall settings, encryption settings in cloud |
+| 📋 **Population evidence** | The requirements and workflows were followed consistently over time |  “Here’s a full list that shows we’ve done it.” | Log of all onboarding events, list of backups, access review records |
+| 📎 **Sample evidence** | Real examples of the process in action | “And here are real examples.” | 3 onboarding tickets, 2 reviewed access approvals, 1 signed NDA from last hire |
+
+At Oneleet, we aim to automate as much of the evidence collection process as possible using built-in monitors and ready-to-use templates. That said, some manual evidence - like signed docs or screenshots - may still be needed, especially for one-off processes or custom workflows. 
+
+## Common mistakes and how to fix them
+
+| **Mistake** | **Why it’s a problem** | **How to fix it** |
+| --- | --- | --- |
+| Evidence lacks context | Auditors can’t tell where the evidence came from or what it relates to | Add URLs, report names, system IDs |
+| No date or timestamp | There's no way to know if the evidence is from the correct time period | Include when the action happened or when the screenshot was taken |
+| Incomplete lists | The control may look like it was only done once or not at all | Double-check that the evidence covers the full period, especially for SOC2 Type II audits |
+
+## What evidence is needed for SOC2 (Type I vs. Type II)
+
+| **SOC2 Type …** | **Goal** | **What to Upload** | **Think of it like this...** |
+| --- | --- | --- | --- |
+| **Type I** | Prove your controls are **designed correctly** at a point in time | • Policy, process or procedure<br/>• Configuration evidence<br/>• At least 1 recent example (e.g. signed NDA, approval email) | "We have this control, and it's set up right now." |
+| **Type II** | Prove your controls are **working consistently** over time | • Policy, process or procedure<br/>• Configuration evidence<br/>• Population evidence*<br/>• Sample evidence* | "This control exists, and we've followed during the observation period." |
+
+*For SOC 2 Type II, you’ll need to provide both population and sample evidence
+
+- **Population evidence:** list or log showing that the events were tracked systematically.
+- **Sample evidence:** small selection from that list or log (usually ~10%, minimum 5, max 25) showing how the events were handled end-to-end.
+
+*Examples:* 
+
+1. **Access requests:** If you had 1,000 access requests, submit the full list showing who requested access for what and when. Oneleet will randomly pick up to 25 to check that approvals, tickets, and proper authorization were in place.
+2. **Change management:** If you had 100 system changes, provide a full log of those changes. Oneleet will sample up to 25 to verify proper approval, testing, documentation, and communication steps were followed.
+3. **Onboarding:** If you onboarded 200 employees, provide the full list with dates and roles. Oneleet will sample up to 25 to confirm the onboarding process was followed (e.g., proof of security training completed within 7 days).
+
+If no events occurred (e.g., no one was onboarded during the observation period), that’s okay too - you’ll just need to show that the control was in place and ready to be used.
+
+Oneleet handles the timing and logic for you - so you’ll always know what to upload and when.
+
+**If you have any questions about this, please reach out to your Security Program Manager!**
