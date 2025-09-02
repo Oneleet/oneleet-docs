@@ -1,0 +1,44 @@
+---
+title: Severity and confidence
+---
+
+# Severity and confidence
+
+Oneleet Code Security classifies each type of code security issue with a **severity level** and a **confidence level**. Severity and confidence are both useful for prioritizing findings, but they measure subtly different things.
+
+## Issue severity
+
+The **severity** of an issue indicates how much of a security risk it poses. As a risk score, severity includes components of both **likelihood** (of exploitability) and **impact** (if exploited):
+
+- Likelihood: **How likely is it that someone will find the issue and be able to exploit it?**
+- Impact: **If someone exploits the issue, how much damage could they cause?**
+
+Oneleet Code Security classifies issues using five levels of severity:
+
+- **Critical** – highest risk
+- **High**
+- **Medium**
+- **Low**
+- **Informational** – lowest risk
+
+Issues assigned **Critical** or **High** severity are likely to be exploitable by an attacker, and could lead to significant damage. Your remediation efforts should start with these. **Critical** issues are rare, but should be addressed immediately.
+
+Issues assigned **Low** or **Informational** severity are unlikely to be exploitable or allow an attacker to do very much. It's probably safe to leave these for later and tackle them in bulk. However, these issues still represent weaknesses in your code, which could potentially help attackers exploit other, more severe vulnerabilities.
+
+## Issue confidence
+
+Analyzing code without running it is an inexact science, and our analysis rules sometimes raise **false positives** – "findings" that match the rule, but don't actually have a security issue.
+
+**Confidence** is an approximate _inverse false positive rate_ – how likely it is that findings are actually instances of the issue. Oneleet Code Security classifies issues using three confidence levels:
+
+- **High** – very few false positives; most findings are genuine instances of the issue
+- **Medium** – occasional false positives
+- **Low** – potentially more false positives
+
+When you set up Oneleet Code Security, we ask you to select a **sensitivity** level, which indicates the minimum level of confidence you're willing to tolerate:
+
+- **Low sensitivity** shows only **High**-confidence issues, with a low false positive rate.
+- **Medium sensitivity** shows both **High**- and **Medium**-confidence issues.
+- **High sensitivity** shows all issues, including those with a higher rate of false positives.
+
+When we introduce a new analysis rule, we estimate a confidence level for it based on superficial factors. As we gather data on actual false positive rates, we may later update the confidence level of rules to better reflect reality.
