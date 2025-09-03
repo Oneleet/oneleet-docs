@@ -35,10 +35,10 @@ Analyzing code without running it is an inexact science, and our analysis rules 
 - **Medium** – occasional false positives
 - **Low** – potentially more false positives
 
-When you set up Oneleet Code Security, we ask you to select a **sensitivity** level, which indicates the minimum level of confidence you're willing to tolerate:
+When you set up Oneleet Code Security, we ask you to select a **sensitivity** level, which is the minimum confidence threshold of issues you want to see. Higher sensitivity levels catch more issues, at the expense of increased noise. Your tolerance to this noise will determine the right sensitivity level for your team. The sensitivity options are:
 
-- **Low sensitivity** shows only **High**-confidence issues, with a low false positive rate.
-- **Medium sensitivity** shows both **High**- and **Medium**-confidence issues.
-- **High sensitivity** shows all issues, including those with a higher rate of false positives.
+- **High confidence issues only**: Lowest noise. Focuses on definite issues.
+- **Balanced (Recommended)**: Shows high and medium confidence issues. A great balance for most teams.
+- **All issues**: Most thorough. Includes experimental checks that may have more false positives.
 
 When we introduce a new analysis rule, we estimate a confidence level for it based on superficial factors. As we gather data on actual false positive rates, we may later update the confidence level of rules to better reflect reality.
