@@ -2,6 +2,7 @@ export default {
   aws: "AWS",
   azure: "Azure",
   cloudflare: "Cloudflare",
+  digitalocean: "DigitalOcean",
   gitlab: "Gitlab",
   github: "GitHub",
   "google-cloud-platform": "Google Cloud Platform",
