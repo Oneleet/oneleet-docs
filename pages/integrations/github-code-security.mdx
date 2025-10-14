@@ -1,0 +1,35 @@
+---
+title: GitHub (Code Security)
+---
+
+# GitHub
+
+This integration supports Code Security scanning for GitHub. For other GitHub integration features, use the **GitHub (Cloud Security)** integration.
+
+## Setup
+
+To setup the GitHub (Code Security) integration, navigate to the **Integrations > Add integration > GitHub (Code Security)** and click **Continue**.
+
+### Which permissions does Oneleet require?
+
+Oneleet Code Security currently requires the following permissions on GitHub:
+
+- Repository metadata (read)
+- Repository contents (read)
+- Repository checks (read and write)
+- Repository pull requests (read and write)
+
+## Updates
+
+### 2025-10-14
+
+#### What's changing?
+
+We’ll soon be adding support for running Oneleet Code Security scanning as a continuous integration check on your GitHub pull requests, so you can find and remediate security issues before they're even introduced.
+
+As part of this change, you should have received a message from GitHub to review and accept the following new permissions for the **Oneleet Code Security** app:
+
+- Read and write access to **Checks** on repositories
+- Read and write access to **Pull requests** on repositories
+
+Once you've accepted the new permissions, you should be ready to go for pull request scanning. We'll have more to share about this feature very soon!
