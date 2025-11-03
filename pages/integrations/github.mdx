@@ -1,23 +1,26 @@
 ---
-title: GitHub
+title: GitHub (Cloud Security)
 ---
 
-# GitHub
+# GitHub (Cloud Security)
+
+This integration supports Cloud Security monitoring for GitHub. You can use it to monitor your GitHub configuration, user access, and Dependabot vulnerabilities. It does not require access to repository contents.
 
 ## Setup
 
-To setup the GitHub integration, navigate to the **Integrations > Add integration > GitHub** and click **Continue**.
+To set up the GitHub (Cloud Security) integration, navigate to the **Integrations > Add integration > GitHub (Cloud Security)** and click **Continue**.
 
 ### Which permissions does Oneleet require?
 
-Oneleet currently requests the following read-only permissions within GitHub:
+Oneleet currently requires the following read-only permissions on GitHub:
 
-- Administration
-- Code
-- Metadata
+- Repository administration
+- Repository Dependabot alerts
+- Repository metadata
+- Repository webhooks
 - Organization administration
-- Organization hooks
-- Repository hooks
+- Organization members
+- Organization webhooks
 
 ### Which resources does Oneleet monitor?
 
@@ -25,6 +28,8 @@ Oneleet currently monitors the following on GitHub:
 
 - Organizations
 - Repositories
+  - Branch protection rules
+  - Dependabot alerts
 
 ## Common Issues
 
