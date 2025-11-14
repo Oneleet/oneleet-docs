@@ -44,6 +44,10 @@ Oneleet currently requests the following read-only permissions within AWS:
         "elasticloadbalancing:DescribeTags",
         "elasticloadbalancing:DescribeTargetGroups",
         "elasticfilesystem:DescribeFileSystems",
+        "guardduty:ListDetectors",
+        "guardduty:ListFindings",
+        "guardduty:GetDetector",
+        "guardduty:GetFindings",
         "iam:GetAccountPasswordPolicy",
         "iam:GetLoginProfile",
         "iam:ListMFADevices",
@@ -87,6 +91,7 @@ Oneleet currently monitors the following AWS resources:
 - IAM users (both user and service accounts)
 - IAM settings
 - EC2 security groups
+- Guard Duty detectors and findings
 - DynamoDB Tables
 - SQS Queues
 - Lambda functions
@@ -105,6 +110,51 @@ You can prevent AWS resources from being read into Oneleet by adding the tag `on
 This can occur if you’ve copied the same external ID to multiple AWS accounts. Please make sure you’ve connected a unique external ID to each account.
 
 ## Updates
+
+### 2025-11-14
+
+#### What's Changing?
+
+We're enhancing our Amazon Web Services integration to improve the scope and reliability of our monitoring. As part of this change, starting **November 14, 2025 (2025-11-14)**, we will require the following **additional permissions** on your IAM role for Oneleet:
+
+- `guardduty:ListDetectors`
+- `guardduty:ListFindings`
+- `guardduty:GetDetector`
+- `guardduty:GetFindings`
+
+These additions allow us to better monitor details of your AWS configuration by allowing us to ensure that Guard Duty is enabled and that Guard Duty Findings are remediated.
+
+#### Action required
+
+If you connected AWS with Oneleet on or after **June 11, 2025 (2025-06-11)**, then you've already granted these permissions, and no further action is required.
+
+Otherwise, update the permissions on your IAM role for Oneleet as soon as possible to maintain full functionality. You have two options:
+
+##### Option 1 (recommended): Update your IAM role for Oneleet
+
+If you choose this method, changes will take effect immediately, and no reconnection is required.
+
+1. Sign in to your AWS Console.
+2. Navigate to IAM > Roles > _your-oneleet-role-name_.
+3. Add the new required permissions:
+
+   ```
+   "guardduty:ListDetectors",
+   "guardduty:ListFindings",
+   "guardduty:GetDetector",
+   "guardduty:GetFindings",
+   ```
+
+Repeat this for any additional AWS connections you have.
+
+##### Option 2: Recreate your AWS connection
+
+1. On the Oneleet platform, go to Integrations → Amazon Web Services → "Settings" tab.
+2. Under **Active connections**, find your connection and remove it. Do **not** remove the entire integration.
+3. Add a new AWS connection by following the on-screen instructions.
+
+Repeat this for any additional AWS connections you have.
+
 
 ### 2025-07-10
 
