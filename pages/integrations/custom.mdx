@@ -1,0 +1,69 @@
+---
+title: Custom Integrations
+---
+
+# Custom Integrations
+
+For vendors without an integration provided by Oneleet, you can save time by building your own integrations using a step-by-step wizard. You can do this at **Integrations** → **Directory** → **Custom Integrations**, where each integration you've built lives as a separate connection.
+
+At present, custom-built integrations can gather users to automatically populate a vendor for access reviews. We recommend trying the integration builder if you have a large number of accounts that would otherwise be tedious to input by hand. Please note the following other limitations at this time:
+
+- only API Key-based based authentication is supported;
+- only JSON-based REST APIs with method GET are supported (e.g., `GET https://api.example.com/v1/users`)
+
+## Building an integration
+
+Here's an overview of the steps you'll take to build a custom integration.
+
+### [1/5] Choose a vendor
+
+Each custom integration is associated with a vendor in your vendor inventory. You can only choose vendors that don't yet have an associated integration.
+
+### [2/5] Authentication
+
+In this step, you'll choose an authentication method and fill your authentication details.
+
+At present, only API Key authentication is supported. For API Key authentication, you can specify an HTTP header name (`Authorization` by default), header format (`Bearer {{apiKey}}` by default), and the API key itself, which will be stored securely.
+
+> Tip: To use HTTP Basic Auth, use header name `Authorization` and header format `Basic {{apiKey}}`, and enter your base64-encoded `username:password` credentials as the API key.
+
+### [3/5] Fetch users from the API
+
+Here, you'll specify the API endpoint from which the integration should fetch lists of users. The integration always uses a `GET` request at this time. Enter a URL, like `https://api.example.com/v1/users`, and click "Request". You can then view the JSON results of a successful request, or the error if something went wrong.
+
+### [4/5] Specify the pagination strategy
+
+APIs often require you to make "paginated" requests to get a full list of items. In this step, you can specify one of the following pagination strategies:
+
+- **None** – no pagination
+- **Cursor-based** – responses include a "cursor" token, which can be included in the query params of a subsequent request to retrieve the next page
+- **Link-based** – respones include a URL that should be queried to retrieve the next page
+- **Offset-based** – pagination is controlled by `offset` and `limit` query params (exact names can vary)
+
+Each pagination strategy has different configuration options, some of which are JSON paths in the response object. When editing response JSON paths, you're shown a live preview of what those paths select from your sample request.
+
+Regardless of pagination strategy, you'll also be asked to specify an "items path", which is a JSON path that points to the actual list of user objects in the response.
+
+### [5/5] Map fields to user properties
+
+In this final step, you'll map fields of user objects from the JSON response to properties that Oneleet's access reviews module understands. These are, again, specified as JSON paths, except starting from a user object as the root instead of the entire response object. You can map the following fields:
+
+- Unique ID (required)
+- Full name
+- First name
+  - used if full name is not available
+- Last name
+  - used if full name is not available
+- Email
+  - required if username is not available
+- Username
+  - required if email is not available
+- MFA enabled?
+  - only supports boolean (`true`/`false`) fields at present
+
+## Using your custom integration
+
+Now that you have a custom integration, it will act like any other integration in the following ways:
+
+- It will periodically fetch user assets from the vendor's API.
+- User accounts from the vendor's API will appear as detected vendor accounts on the **People** page and in **Access reviews**.

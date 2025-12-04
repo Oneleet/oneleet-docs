@@ -12,4 +12,5 @@ export default {
   microsoft365: "Microsoft 365",
   supabase: "Supabase",
   vercel: "Vercel",
+  custom: "Custom Integrations",
 };
