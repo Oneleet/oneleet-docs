@@ -15,11 +15,13 @@ At present, custom-built integrations can gather users to automatically populate
 
 Here's an overview of the steps you'll take to build a custom integration.
 
-### [1/5] Choose a vendor
+<Steps>
+
+### Choose a vendor
 
 Each custom integration is associated with a vendor in your vendor inventory. You can only choose vendors that don't yet have an associated integration.
 
-### [2/5] Authentication
+### Authentication
 
 In this step, you'll choose an authentication method and fill your authentication details.
 
@@ -27,11 +29,11 @@ At present, only API Key authentication is supported. For API Key authentication
 
 > Tip: To use HTTP Basic Auth, use header name `Authorization` and header format `Basic {{apiKey}}`, and enter your base64-encoded `username:password` credentials as the API key.
 
-### [3/5] Fetch users from the API
+### Fetch users from the API
 
 Here, you'll specify the API endpoint from which the integration should fetch lists of users. The integration always uses a `GET` request at this time. Enter a URL, like `https://api.example.com/v1/users`, and click "Request". You can then view the JSON results of a successful request, or the error if something went wrong.
 
-### [4/5] Specify the pagination strategy
+### Specify the pagination strategy
 
 APIs often require you to make "paginated" requests to get a full list of items. In this step, you can specify one of the following pagination strategies:
 
@@ -44,7 +46,7 @@ Each pagination strategy has different configuration options, some of which are 
 
 Regardless of pagination strategy, you'll also be asked to specify an "items path", which is a JSON path that points to the actual list of user objects in the response.
 
-### [5/5] Map fields to user properties
+### Map fields to user properties
 
 In this final step, you'll map fields of user objects from the JSON response to properties that Oneleet's access reviews module understands. These are, again, specified as JSON paths, except starting from a user object as the root instead of the entire response object. You can map the following fields:
 
@@ -60,6 +62,8 @@ In this final step, you'll map fields of user objects from the JSON response to 
   - required if email is not available
 - MFA enabled?
   - only supports boolean (`true`/`false`) fields at present
+
+</Steps>
 
 ## Using your custom integration
 
