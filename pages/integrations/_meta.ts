@@ -5,7 +5,7 @@ export default {
   digitalocean: "DigitalOcean",
   gitlab: "Gitlab",
   github: "GitHub (Cloud Security)",
-  "github-code-security": "GitHub (Code SEcurity",
+  "github-code-security": "GitHub (Code Security)",
   "google-cloud-platform": "Google Cloud Platform",
   "google-workspace": "Google Workspace",
   jumpcloud: "Jumpcloud",
