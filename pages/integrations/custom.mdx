@@ -6,9 +6,9 @@ title: Custom Integrations
 
 For vendors without an integration provided by Oneleet, you can save time by building your own integrations using a step-by-step wizard. You can do this at **Integrations** → **Directory** → **Custom Integrations**, where each integration you've built lives as a separate connection.
 
-At present, custom-built integrations can gather users to automatically populate a vendor for access reviews. We recommend trying the integration builder if you have a large number of accounts that would otherwise be tedious to input by hand. Please note the following other limitations at this time:
+At present, custom-built integrations can gather users to automatically populate a vendor for access reviews. We recommend trying the integration builder if you have many accounts that would otherwise be tedious to input by hand. Please note the following other limitations at this time:
 
-- only API Key-based based authentication is supported;
+- only API Key-based authentication is supported;
 - only JSON-based REST APIs with method GET are supported (e.g., `GET https://api.example.com/v1/users`)
 
 ## Building an integration
@@ -37,7 +37,7 @@ APIs often require you to make "paginated" requests to get a full list of items.
 
 - **None** – no pagination
 - **Cursor-based** – responses include a "cursor" token, which can be included in the query params of a subsequent request to retrieve the next page
-- **Link-based** – respones include a URL that should be queried to retrieve the next page
+- **Link-based** – responses include a URL that should be queried to retrieve the next page
 - **Offset-based** – pagination is controlled by `offset` and `limit` query params (exact names can vary)
 
 Each pagination strategy has different configuration options, some of which are JSON paths in the response object. When editing response JSON paths, you're shown a live preview of what those paths select from your sample request.
