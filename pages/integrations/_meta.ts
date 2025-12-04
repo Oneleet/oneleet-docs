@@ -4,7 +4,8 @@ export default {
   cloudflare: "Cloudflare",
   digitalocean: "DigitalOcean",
   gitlab: "Gitlab",
-  github: "GitHub",
+  github: "GitHub (Cloud Security)",
+  "github-code-security": "GitHub (Code SEcurity",
   "google-cloud-platform": "Google Cloud Platform",
   "google-workspace": "Google Workspace",
   jumpcloud: "Jumpcloud",
@@ -12,5 +13,6 @@ export default {
   microsoft365: "Microsoft 365",
   supabase: "Supabase",
   vercel: "Vercel",
+  zoom: "Zoom",
   custom: "Custom Integrations",
 };
