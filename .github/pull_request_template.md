@@ -1,3 +1,5 @@
+**REMEMBER:** The oneleet-docs repository is public.
+
 ## Reviewers
 
   <!--
