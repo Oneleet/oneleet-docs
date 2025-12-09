@@ -12,74 +12,7 @@ You will be asked to create a new policy and role in your AWS account. Oneleet u
 
 ### Which permissions does Oneleet require?
 
-Oneleet currently requests the following read-only permissions within AWS:
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "OneleetAssumeRolePolicy",
-      "Effect": "Allow",
-      "Action": [
-        "account:ListRegions",
-        "cloudtrail:LookupEvents",
-        "cloudwatch:DescribeAlarms",
-        "cloudwatch:DescribeAlarmsForMetric",
-        "dynamodb:DescribeContinuousBackups",
-        "dynamodb:DescribeTable",
-        "dynamodb:ListTables",
-        "dynamodb:ListTagsOfResource",
-        "ec2:DescribeInstances",
-        "ec2:DescribeSecurityGroups",
-        "ecr:DescribeImages",
-        "ecr:DescribeRegistry",
-        "ecr:DescribeRepositories",
-        "ecr:ListImages",
-        "ecr:GetRegistryScanningConfiguration",
-        "ecr:ListTagsForResource",
-        "elasticloadbalancing:DescribeListeners",
-        "elasticloadbalancing:DescribeLoadBalancers",
-        "elasticloadbalancing:DescribeRules",
-        "elasticloadbalancing:DescribeTags",
-        "elasticloadbalancing:DescribeTargetGroups",
-        "elasticfilesystem:DescribeFileSystems",
-        "guardduty:ListDetectors",
-        "guardduty:ListFindings",
-        "guardduty:GetDetector",
-        "guardduty:GetFindings",
-        "iam:GetAccountPasswordPolicy",
-        "iam:GetLoginProfile",
-        "iam:ListMFADevices",
-        "iam:ListServerCertificates",
-        "iam:ListUsers",
-        "inspector:DescribeFindings",
-        "inspector:ListFindings",
-        "inspector2:GetFindingsReportStatus",
-        "inspector2:ListCoverage",
-        "inspector2:ListCoverageStatistics",
-        "inspector2:ListFindingAggregations",
-        "inspector2:ListFindings",
-        "lambda:ListFunctions",
-        "lambda:ListTags",
-        "logs:DescribeLogGroups",
-        "logs:ListTagsForResource",
-        "rds:DescribeDBInstances",
-        "s3:GetBucketAcl",
-        "s3:GetBucketLocation",
-        "s3:GetBucketPublicAccessBlock",
-        "s3:GetBucketTagging",
-        "s3:GetBucketVersioning",
-        "s3:ListAllMyBuckets",
-        "sqs:GetQueueAttributes",
-        "sqs:ListQueues",
-        "sqs:ListQueueTags"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
+Oneleet currently requests permissions from the AWS-managed [`SecurityAudit` policy](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/SecurityAudit.html).
 
 ### Which resources does Oneleet monitor?
 
@@ -111,9 +44,32 @@ This can occur if you’ve copied the same external ID to multiple AWS accounts.
 
 ## Updates
 
+### 2025-12-08
+
+#### What's changing?
+
+Another permissions update. Really?
+
+We get it. And we're fixing it: starting **December 8, 2025 (2025-12-08)**, we will begin requesting permissions by way of the AWS-managed [`SecurityAudit` policy](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/SecurityAudit.html), rather than a custom policy. The `SecurityAudit` policy is expressly designed to enable read-only access to resources that security audits might need. This means we won't need to nickel-and-dime you for permissions updates every few months.
+
+This update also allows us to improve the API call efficiency of our AWS monitoring, to reduce failures and retries attributable to rate limiting. While your AWS connections won't immediately break either way, we recommend updating soon to allow us to monitor your account more reliably.
+
+#### Action required
+
+If you connected AWS with Oneleet on or after **December 8, 2025 (2025-12-08)**, then you're already using the AWS-managed `SecurityAudit` policy, and no further action is required.
+
+Otherwise, we recommend doing the following:
+
+1. On the Oneleet platform, go to Integrations → Amazon Web Services → **Settings** tab.
+2. Under **Active connections**, for each connection:
+   1. Click **Reconnect**.
+   2. Follow the on-screen instructions to reconnect using the CLI (recommended) or the AWS Console.
+
+**Failing connections?** Changes may take some time to propagate across AWS. If you see a connection failure immediately after reconnecting, please check back in an hour or so.
+
 ### 2025-11-14
 
-#### What's Changing?
+#### What's changing?
 
 We're enhancing our Amazon Web Services integration to improve the scope and reliability of our monitoring. As part of this change, starting **November 14, 2025 (2025-11-14)**, we will require the following **additional permissions** on your IAM role for Oneleet:
 
