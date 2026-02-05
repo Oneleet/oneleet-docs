@@ -14,3 +14,24 @@ Please ensure the following are true before proceeding:
 - You have access to the Microsoft 365 Admin Center.
 
 Click the 'Connect' button to sign in with your Microsoft account.
+
+## Updates
+
+### 2026-01-30
+
+#### What's changing?
+
+We're updating our Microsoft 365 integration to more reliably monitor your Microsoft Entra ID security policies. As part of this change, we now require the following **additional permissions**:
+- Policy.Read.All - Read-only access to Entra ID policies
+
+After this change, your monitors should exhibit fewer false positives.
+
+#### Action required
+
+Please reconnect your Microsoft 365 integration and accept the new permissions as soon as possible.
+
+1. On the Oneleet platform, go to Integrations → Microsoft 365 → "Settings" tab.
+2. Under **Active connections**, find your connection and click **Reconnect**. Do **not** remove the entire integration.
+3. Click "Connect", and authorize the new permissions.
+
+Repeat this for any additional Microsoft 365 connections you have.
