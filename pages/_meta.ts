@@ -6,6 +6,7 @@ export default {
   "guides": "Guides",
   "penetration-testing": "Penetration Testing",
   "code-security": "Code Security",
+  "attack-surface-management": "Attack Surface Management",
   "support": {
     "title": "Support",
     "type": "page",
