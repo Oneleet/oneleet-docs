@@ -1,0 +1,49 @@
+---
+title: Tailscale
+---
+
+# Tailscale
+
+## Overview
+
+The Tailscale integration connects your Tailscale tailnet to Oneleet, syncing **users** and **devices** as assets. Oneleet monitors your tailnet for dormant users, outdated clients, and unauthorized devices.
+
+### What does Oneleet monitor?
+
+- **Users** — tailnet members, including activity status and login information
+- **Devices** — connected devices, including authorization status and client version
+- **Tailnet** — network-level security properties (end-to-end encryption)
+
+## Setup
+
+To set up the Tailscale integration, navigate to **Integrations > Add integration > Tailscale** and click **Continue**.
+
+Oneleet requires an **OAuth client credential** with read-only access to your tailnet.
+
+### Creating an OAuth credential
+
+1. Open the [Tailscale admin console trust credentials page](https://login.tailscale.com/admin/settings/trust-credentials)
+2. Click the **+ Credential** button and select **OAuth**
+3. In the **Scopes** dropdown, select **All - Read**
+4. Click **Generate credential**
+5. Copy both the **Client ID** and **Client Secret** from the generated credential modal
+6. Click **Done**
+
+The client secret cannot be retrieved after closing the modal. If you lose it, you will need to generate a new credential.
+
+### Connecting to Oneleet
+
+1. Enter the **Client ID**
+2. Enter the **Client Secret** (must start with `tskey-client-`)
+3. Click **Submit**
+
+Oneleet will validate the credentials by querying the Tailscale API for your tailnet users.
+
+### Compliance monitors
+
+The Tailscale integration includes the following built-in compliance monitors:
+
+- **End-to-end encryption** — verifies that tailnet traffic is encrypted end-to-end
+- **Dormant user detection** — flags users inactive for more than 30 days
+- **Outdated client detection** — flags devices not running the latest Tailscale client
+- **Unauthorized device detection** — flags devices that have not been authorized on the tailnet

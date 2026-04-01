@@ -12,6 +12,7 @@ export default {
   mezmo: "Mezmo",
   microsoft365: "Microsoft 365",
   supabase: "Supabase",
+  tailscale: "Tailscale",
   vercel: "Vercel",
   zoom: "Zoom",
   custom: "Custom Integrations",
