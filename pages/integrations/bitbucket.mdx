@@ -1,0 +1,38 @@
+---
+title: Bitbucket
+---
+
+# Bitbucket
+
+## Overview
+
+The Bitbucket integration connects your Bitbucket Cloud workspace to Oneleet, syncing **workspace members** as user account assets. This enables Oneleet to monitor user access across your version control platform.
+
+### What does Oneleet monitor?
+
+- Bitbucket workspace members (user accounts)
+
+## Setup
+
+To set up the Bitbucket integration, navigate to **Integrations > Add integration > Bitbucket** and click **Continue**.
+
+Oneleet uses OAuth to connect to the Bitbucket API. Click the **Connect** button to start the OAuth authorization flow.
+
+### Required permissions
+
+The OAuth flow requests the following Bitbucket scope:
+
+- `project` — allows Oneleet to read workspace membership information
+
+### Connection process
+
+1. Click **Connect** on the integration setup form
+2. You will be redirected to Bitbucket to authorize Oneleet
+3. Grant the requested permissions
+4. Bitbucket will redirect you back to Oneleet
+
+Oneleet will automatically detect your workspace. Note that the integration requires **exactly one workspace** associated with your Bitbucket account.
+
+### Reconnecting
+
+If you need to refresh your OAuth credentials, navigate to the integration settings and click **Reconnect** to re-authorize.
