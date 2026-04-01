@@ -1,0 +1,32 @@
+---
+title: Supported languages
+---
+
+# Supported languages
+
+Oneleet Code Security scans your codebase for security vulnerabilities using static analysis rules tailored to each language. The following languages and platforms are currently supported:
+
+| Language | Rule count | Key vulnerability categories |
+| --- | --- | --- |
+| JavaScript / TypeScript | 13 | Code injection, XSS, path traversal, certificate validation, buffer issues, ReDoS, weak cryptography |
+| Python | 6 | Certificate validation, hardcoded credentials, timing attacks, debug mode exposure |
+| PHP | 6 | Certificate validation, insecure hash functions, timing attacks, information disclosure |
+| Ruby | 2 | Certificate validation, timing attacks |
+| Rust | 2 | Certificate validation, timing attacks |
+| Go | 1 | Deprecated TLS versions |
+| Shell / Bash | 1 | Certificate validation (insecure curl flags) |
+| HTML | 1 | Plaintext HTTP links |
+| GitHub Actions | 1 | Shell injection in workflow runs |
+| npm | 2 | Supply chain attack detection |
+
+## Detection methods
+
+Oneleet Code Security uses multiple scanning tools:
+
+- **Custom static analysis rules** — language-specific rules that detect common vulnerability patterns using abstract syntax tree matching
+- **Secret detection** — scans for accidentally committed secrets and credentials
+- **Dependency analysis** — generates a software bill of materials (SBOM) for dependency tracking
+
+## Language detection
+
+Languages are automatically detected based on file extensions. No additional configuration is required — Oneleet will scan all supported file types found in your repository.
