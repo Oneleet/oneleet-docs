@@ -1,0 +1,36 @@
+---
+title: Doppler
+---
+
+# Doppler
+
+## Overview
+
+The Doppler integration connects your Doppler workspace to Oneleet, syncing **workspace users** as user account assets. Oneleet monitors multi-factor authentication (MFA) status across your Doppler users to help enforce security best practices.
+
+### What does Oneleet monitor?
+
+- Doppler workspace users (user accounts)
+- MFA enablement status (including third-party SSO and SAML SSO)
+
+## Setup
+
+To set up the Doppler integration, navigate to **Integrations > Add integration > Doppler** and click **Continue**.
+
+Oneleet requires an **Audit API token** from your Doppler workspace. The Audit API is available on Doppler's **Team plan** or higher. If you're on a free plan, you can start a [14-day free trial](https://www.doppler.com/pricing).
+
+### Creating an Audit token
+
+1. Navigate to the [Doppler Dashboard](https://dashboard.doppler.com/workplace)
+2. Click **Tokens** in the left-hand menu
+3. Click the **Audit** tab
+4. Copy the Audit Token displayed on the page
+
+Only **workspace owners** can manage audit tokens. If no token is visible, click **Roll** to generate a new one.
+
+### Connecting to Oneleet
+
+1. Paste the Audit Token into the form
+2. Click **Submit**
+
+Oneleet will validate the token by querying the Doppler Workplace API. If successful, the connection will be created using your workspace name as the identifier.
