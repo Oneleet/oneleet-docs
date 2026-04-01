@@ -11,6 +11,7 @@ export default {
   jumpcloud: "Jumpcloud",
   mezmo: "Mezmo",
   microsoft365: "Microsoft 365",
+  slack: "Slack",
   supabase: "Supabase",
   vercel: "Vercel",
   zoom: "Zoom",

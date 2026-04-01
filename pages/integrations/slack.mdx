@@ -1,0 +1,72 @@
+---
+title: Slack
+---
+
+# Slack
+
+## Overview
+
+The Slack integration connects your Slack workspace or Enterprise Grid organization to Oneleet, syncing **channels**, **users**, and **guest users** as assets. This enables Oneleet to monitor user access, 2FA status, and channel configuration.
+
+### What does Oneleet monitor?
+
+- **Channels** — public and private channels (excluding archived channels)
+- **Users** — workspace members, including roles (Admin, Owner, Primary Owner) and 2FA status
+- **Guest users** — restricted and ultra-restricted users (multi-workspace guests, single-channel guests)
+
+## Setup
+
+To set up the Slack integration, navigate to **Integrations > Add integration > Slack** and click **Continue**.
+
+Oneleet uses OAuth to connect to the Slack API. You will first select your Slack plan type, then complete the OAuth authorization flow.
+
+### Selecting your plan type
+
+Oneleet supports two Slack plan types with different permission requirements:
+
+- **Standard** (Free, Pro, Business+)
+- **Enterprise Grid**
+
+Select the plan type that matches your Slack workspace.
+
+### Required permissions
+
+#### Standard plan
+
+You must be a **workspace owner** or **administrator** to authorize the integration.
+
+**Bot scopes:**
+- `channels:read` — read channel information
+- `groups:read` — read private channel information
+- `team:read` — read workspace information
+- `chat:write` — send messages (for notifications)
+- `app_mentions:read` — read app mentions
+- `mpim:read` — read multi-person DM channels
+
+**User scopes:**
+- `users:read` — read user list
+- `users:read.email` — read user email addresses
+
+#### Enterprise Grid
+
+You must be an **Organization Owner** or have both **Organization User Admin** and **Channels Admin** roles.
+
+**Bot scopes** (in addition to standard scopes):
+- `admin.teams:read` — list all teams in the organization
+- `admin.users:read` — list all organization users
+
+**User scopes:**
+- `users:read` — read user list
+- `users:read.email` — read user email addresses
+
+### Connection process
+
+1. Select your Slack plan type (Standard or Enterprise Grid)
+2. Click **Connect**
+3. You will be redirected to Slack to authorize Oneleet
+4. Grant the requested permissions
+5. Slack will redirect you back to Oneleet
+
+### Reconnecting
+
+If you need to refresh your OAuth credentials, navigate to the integration settings, select your plan type, and click **Reconnect**.
