@@ -1,0 +1,55 @@
+---
+title: Fly.io
+---
+
+# Fly.io
+
+## Overview
+
+The Fly.io integration connects your Fly.io organization to Oneleet, syncing apps, users, devices, secrets, tokens, and network peers. This provides comprehensive visibility into your Fly.io infrastructure for security monitoring and compliance.
+
+### What does Oneleet monitor?
+
+- **Apps** — deployed applications (excluding destroyed apps)
+- **Users** — organization members, including MFA/2FA status and roles
+- **Secrets** — application-level secrets with ownership tracking
+- **Tokens** — organization access tokens with expiration and revocation status
+- **Volumes** — storage volumes, including encryption and snapshot retention settings
+- **WireGuard peers** — VPN peer connections, with detection of peers belonging to offboarded members
+
+## Setup
+
+To set up the Fly.io integration, navigate to **Integrations > Add integration > Fly.io** and click **Continue**.
+
+Oneleet requires an **organization access token** and your **organization slug** to connect.
+
+### Creating an organization access token
+
+#### Via the Fly.io Dashboard
+
+1. Navigate to the [Fly.io Dashboard](https://fly.io/dashboard)
+2. Click **Tokens** in the left sidebar
+3. Optionally set a token name and expiration duration
+4. Click **Create Organization Token**
+5. Copy the generated token
+
+#### Via the Fly.io CLI
+
+1. Install `flyctl` from the [Fly.io CLI docs](https://fly.io/docs/flyctl/install/)
+2. Run the following command:
+   ```bash
+   fly tokens create org --name "Oneleet Integration" --expiry 8760h
+   ```
+   The `--expiry` flag accepts durations in hours (e.g., `8760h` for 1 year).
+
+### Finding your organization slug
+
+Your organization slug is the URL-safe name of your Fly.io organization. You can find it in the URL when viewing your organization dashboard: `https://fly.io/dashboard/<org-slug>`.
+
+### Connecting to Oneleet
+
+1. Enter your organization slug (4–100 characters)
+2. Paste the organization access token
+3. Click **Submit**
+
+Oneleet will validate the token by querying the Fly.io GraphQL API for your organization details.
