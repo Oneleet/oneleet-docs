@@ -1,7 +1,6 @@
 export default {
   aws: "AWS",
   azure: "Azure",
-  bitbucket: "Bitbucket",
   brex: "Brex",
   cloudflare: "Cloudflare",
   digitalocean: "DigitalOcean",
@@ -11,7 +10,6 @@ export default {
   "google-cloud-platform": "Google Cloud Platform",
   "google-workspace": "Google Workspace",
   jumpcloud: "Jumpcloud",
-  linear: "Linear",
   mezmo: "Mezmo",
   microsoft365: "Microsoft 365",
   supabase: "Supabase",
