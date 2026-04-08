@@ -1,0 +1,39 @@
+---
+title: Brex
+---
+
+# Brex
+
+## Overview
+
+The Brex integration connects your Brex account to Oneleet, syncing **active user accounts** from your Brex workspace. This enables Oneleet to monitor user access and enforce compliance across your spend management platform.
+
+### What does Oneleet monitor?
+
+- Brex user accounts (active users only)
+
+## Setup
+
+To set up the Brex integration, navigate to **Integrations > Add integration > Brex** and click **Continue**.
+
+Oneleet requires a Brex API token with read access to your users.
+
+### Creating an API token
+
+1. Open the [Brex Developer Settings](https://dashboard.brex.com/settings/developer)
+2. Click **Create Token**
+3. Under the **Team** section, select the **Read** permission for **Users**
+4. No other permissions are necessary
+5. Scroll to the bottom and click **Create Token**
+6. Click **Allow Access** to generate the token secret
+7. Copy the secret — you will not be able to access it again
+
+For more information, see the [Brex API authentication documentation](https://developer.brex.com/docs/authentication/).
+
+### Connecting to Oneleet
+
+1. Enter a name for the access token (5–32 characters)
+2. Paste the token secret (exactly 40 characters)
+3. Click **Submit**
+
+Oneleet will validate the token by querying the Brex API. If the token is valid, the connection will be created.

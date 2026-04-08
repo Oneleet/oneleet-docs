@@ -2,6 +2,7 @@ export default {
   aws: "AWS",
   azure: "Azure",
   bitbucket: "Bitbucket",
+  brex: "Brex",
   cloudflare: "Cloudflare",
   digitalocean: "DigitalOcean",
   gitlab: "Gitlab",
