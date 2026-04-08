@@ -5,6 +5,7 @@ export default {
   brex: "Brex",
   cloudflare: "Cloudflare",
   digitalocean: "DigitalOcean",
+  flyio: "Fly.io",
   gitlab: "Gitlab",
   github: "GitHub (Cloud Security)",
   "github-code-security": "GitHub (Code Security)",
