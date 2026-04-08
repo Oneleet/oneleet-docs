@@ -1,18 +1,26 @@
 export default {
   aws: "AWS",
   azure: "Azure",
+  bitbucket: "Bitbucket",
+  brex: "Brex",
   cloudflare: "Cloudflare",
   digitalocean: "DigitalOcean",
+<<<<<<< docs/add-doppler-integration
   doppler: "Doppler",
+=======
+  flyio: "Fly.io",
+>>>>>>> main
   gitlab: "Gitlab",
   github: "GitHub (Cloud Security)",
   "github-code-security": "GitHub (Code Security)",
   "google-cloud-platform": "Google Cloud Platform",
   "google-workspace": "Google Workspace",
   jumpcloud: "Jumpcloud",
+  linear: "Linear",
   mezmo: "Mezmo",
   microsoft365: "Microsoft 365",
   supabase: "Supabase",
+  tailscale: "Tailscale",
   vercel: "Vercel",
   zoom: "Zoom",
   custom: "Custom Integrations",
