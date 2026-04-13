@@ -16,6 +16,7 @@ export default {
   linear: "Linear",
   mezmo: "Mezmo",
   microsoft365: "Microsoft 365",
+  slack: "Slack",
   supabase: "Supabase",
   tailscale: "Tailscale",
   vercel: "Vercel",
